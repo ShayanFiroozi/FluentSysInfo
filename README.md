@@ -88,7 +88,7 @@ And the result from the **FluentSysInfo** would be something like this :
 > **Note**:  
 **FluentSysInfo** settings can be easily changed via [Service Settings File](https://github.com/ShayanFiroozi/FluentSysInfo/blob/master/Settings/ServiceSettings.json).  
     
-> **Warning**:  
+> :warning:  
 It is recommended to keep the **UseAuthentication** setting enable to prevent unwanted access to the target machine information.
 
 <br/>
