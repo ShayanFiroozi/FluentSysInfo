@@ -1,0 +1,108 @@
+<p align="center">
+ <img src="https://github.com/ShayanFiroozi/FluentSysInfo/blob/master/Icon.png"
+</p>
+
+# FluentSysInfo
+[![License](https://img.shields.io/github/license/shayanfiroozi/FluentSysInfo)](https://github.com/ShayanFiroozi/FluentSysInfo/blob/master/LICENSE.md)
+ 
+**FluentSysInfo** provides the accessibility to the various System Informations of a local or remote machine via WebAPI
+  
+✔ FluentSysInfo uses [Watson Web Server](https://github.com/dotnet/WatsonWebserver) , A great , lightweight and most reliable web server , special thanks to @jchristn 👍
+
+✔ FluentSysInfo uses [FastLog.Net](https://github.com/ShayanFiroozi/FastLog.Net) , Ultra Fast and High performance logger for .NET 💯 
+
+<br/>
+
+## Features 💯
+ **FluentSysInfo features :**
+ * **Supported System Information :**  
+    * Date Time Info  
+    * Main Board Info  
+    * CPU Info  
+    * Memory Info  
+    * Disk And Drive Info  
+    * Network And Interfaces Info  
+    * Screen And Resolution Info  
+    * Running Processes Info  
+    * Installed Services Info  
+ <br/>  
+ 
+ 
+ > **Note**:  
+Not all freatures in the **Features** section have developed yet , but they are under developement and will be ready very soon 😉
+ 
+
+## Contributions 🤝
+Since this is a new repository , there's no contributor yet! , But **FluentSysInfo** welcomes and appreciates any contribution , pull request or bug report.
+
+ 
+
+
+<br/>
+ 
+## How To Use ❔
+   
+ - It's really simple to call the **FluentSysInfo** WebAPI.
+ 
+ ```csharp
+            string ServerSecteyKey = "FluentSysInfoSecretKeyXXX";
+            string TargetUrl = $"http://localhost:54800/api/SysInfo/GetDateTimeInfo/{ServerSecteyKey}";
+
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync(TargetUrl);
+
+                string result = await response.Content.ReadAsStringAsync();
+
+                Console.WriteLine(result);
+
+            }
+
+            Console.ReadLine();
+
+```   
+
+> **Note**:  
+**FluentSysInfo** settings can be easily changed via [ServiceSettings.json](https://github.com/ShayanFiroozi/FluentSysInfo/blob/master/Settings/ServiceSettings.json).  
+    
+> **Warning**:  
+It is recommended to keep the **UseAuthentication** enable to prevent unwanted access to the target machine information.
+ 
+
+ <br/>
+ 
+ 
+## ‼ Known Issues
+ **Not Reported Yet!** 😎
+
+<br/>
+ 
+ ## © License
+**FluentSysInfo** is an open source software, licensed under the terms of MIT license.
+See [**LICENSE**](LICENSE.md) for more details.
+
+<br/>
+ 
+## 🛠 How to build
+Use **Visual Studio 2022** and open the solution 'FluentSysInfo.sln'.
+
+**FluentSysInfo** solution is setup to support following .Net versions :
+
+- .Net Core 8.0
+- .Net Core 7.0
+- .Net Core 6.0
+- .Net Framework 4.8
+
+
+> **Note**:  
+Since the **FluentSysInfo** solution is supporting multi target frameworks , to build the solution successfully you should install all .Net versions above , otherwise you can easily exclude not interested framework(s) by editing **TargetFrameworks** tag in the [FluentSysInfo Project File](https://github.com/ShayanFiroozi/FluentSysInfo/blob/master/FluentSysInfo.csproj).
+
+<br/>
+ 
+## Donations 💲
+If you would like to financially support **FluentSysInfo**, first of all, thank you! Please read [**DONATIONS**](DONATIONS.md) for my crypto wallets !
+
+<br/>
+ 
+## Version History 🕙
+Please read [**CHANGELOG**](CHANGELOG.md) for more and track changing details.

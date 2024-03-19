@@ -11,25 +11,20 @@ namespace FluentSysInfoTest
 
 
 
+            string ServerSecteyKey = "FluentSysInfoSecretKeyXXX";
+            string TargetUrl = $"http://localhost:54800/api/SysInfo/GetDateTimeInfo/{ServerSecteyKey}";
+
             using (HttpClient client = new HttpClient())
             {
-                string serverSecteyKey = "FluentSysInfoSecretKeyXXX";
-
-                string url = $"http://localhost:54800/api/SysInfo/GetDateTimeInfo/{serverSecteyKey}";
-
-                HttpResponseMessage response = await client.GetAsync(url);
-
+                HttpResponseMessage response = await client.GetAsync(TargetUrl);
 
                 string result = await response.Content.ReadAsStringAsync();
+
                 Console.WriteLine(result);
-
-
 
             }
 
-              Console.ReadLine();
-
-
+            Console.ReadLine();
 
         }
 
