@@ -1,0 +1,6 @@
+{
+  "IPAddress": "*",
+  "ServicePort": "54800",
+  "UseAuthentication": "true",
+  "ServiceSecretKey": "FluentSysInfoSecretKeyXXX"
+}
