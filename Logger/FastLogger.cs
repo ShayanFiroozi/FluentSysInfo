@@ -23,7 +23,7 @@ namespace FluentSysInfo
     internal static class FastLogger
     {
 
-        public static Logger logger;
+        internal static Logger logger { get; private set; }
 
         internal static void InitializeLogger(string LogPath)
         {

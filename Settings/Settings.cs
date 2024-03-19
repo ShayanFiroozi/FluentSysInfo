@@ -32,7 +32,6 @@ namespace FluentSysInfo
 
         private static IConfiguration ServiceSettings = new ConfigurationBuilder()
                 .AddJsonFile(Path.Combine(AppContext.BaseDirectory, "Settings", "ServiceSettings.json"), true, true)
-                .AddUserSecrets<Program>()
                 .Build();
 
 
