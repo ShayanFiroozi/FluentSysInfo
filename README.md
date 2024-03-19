@@ -64,10 +64,10 @@ Since this is a new repository , there's no contributor yet! , But **FluentSysIn
 ```   
 
 > **Note**:  
-**FluentSysInfo** settings can be easily changed via [ServiceSettings.json](https://github.com/ShayanFiroozi/FluentSysInfo/blob/master/Settings/ServiceSettings.json).  
+**FluentSysInfo** settings can be easily changed via [Service Settings File](https://github.com/ShayanFiroozi/FluentSysInfo/blob/master/Settings/ServiceSettings.json).  
     
 > **Warning**:  
-It is recommended to keep the **UseAuthentication** enable to prevent unwanted access to the target machine information.
+It is recommended to keep the **UseAuthentication** setting enable to prevent unwanted access to the target machine information.
  
 
  <br/>
