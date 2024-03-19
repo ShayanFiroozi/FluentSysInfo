@@ -1,5 +1,5 @@
 <p align="center">
- <img src="https://github.com/ShayanFiroozi/FluentSysInfo/blob/master/Icon.png"
+ <img src="https://github.com/ShayanFiroozi/FluentSysInfo/blob/master/Icon.ico"
 </p>
 
 # FluentSysInfo
