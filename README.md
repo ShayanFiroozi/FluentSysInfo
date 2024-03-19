@@ -95,9 +95,11 @@ It is recommended to keep the **UseAuthentication** setting enable to prevent un
 
     
 ### Available APIs : 
-* **Date And Time Info -> /api/SysInfo/GetDateTimeInfo**  
+* **Date And Time Info -> /api/SysInfo/GetDateTimeInfo**
+  
 
 
+  
 > :warning:  If **UseAuthentication** settings is enable the secret key should be sent by each **Get** request.
 
 
