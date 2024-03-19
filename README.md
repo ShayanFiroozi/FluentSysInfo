@@ -63,7 +63,7 @@ Since this is a new repository , there's no contributor yet! , But **FluentSysIn
 
 ```   
 
-And the result from the FluentSysInfo is : 
+And the result from the **FluentSysInfo** would be : 
 
 ```json
 {
