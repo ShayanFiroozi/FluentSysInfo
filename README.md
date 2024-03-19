@@ -91,8 +91,8 @@ And the result from the **FluentSysInfo** would be something like this :
 > **Warning**:  
 It is recommended to keep the **UseAuthentication** setting enable to prevent unwanted access to the target machine information.
  
-## Available APIs : 
-* Date Time Info   -> /api/SysInfo/GetDateTimeInfo
+### Available APIs : 
+* **Date And Time Info -> /api/SysInfo/GetDateTimeInfo**  
 
  <br/>
  
