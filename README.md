@@ -63,6 +63,19 @@ Since this is a new repository , there's no contributor yet! , But **FluentSysIn
 
 ```   
 
+And the result from the FluentSysInfo is : 
+
+```json
+{
+  "DateTime": "3/19/2024 3:51:49 PM",
+  "DateTimeUTC": "3/19/2024 12:21:49 PM",
+  "DateOnly": "3/19/2024",
+  "TimeOnly": "3:51:49 PM",
+  "LongDate": "Tuesday, March 19, 2024",
+  "FullDateTime": "Tuesday, March 19, 2024  3:51:49 PM"
+}
+```
+
 > **Note**:  
 **FluentSysInfo** settings can be easily changed via [Service Settings File](https://github.com/ShayanFiroozi/FluentSysInfo/blob/master/Settings/ServiceSettings.json).  
     
