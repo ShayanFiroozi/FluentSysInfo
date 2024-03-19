@@ -26,29 +26,26 @@ namespace FluentSysInfo
     {
 
 
-        private async Task GetDateTimeInfoCallBack(HttpContextBase ctx)
+        private async Task OSInfoCallBack(HttpContextBase ctx)
         {
 
             if (await CheckAuthentication(ctx))
             {
 
-                SysInfoDateTime GetDateTimeInfo = new SysInfoDateTime();
+                SysInfoOS GetOSInfo = new SysInfoOS();
 
-                // Create a DateTimeModel instance
-                string DateTimeInfoJSON = WebServerAgent.Serializer.SerializeJson(new DateTimeModel(GetDateTimeInfo.GetDateTime(),
-                    GetDateTimeInfo.GetDateTimeUTC(),
-                    GetDateTimeInfo.GetDate(),
-                    GetDateTimeInfo.GetTime(),
-                    GetDateTimeInfo.GetLongDate(),
-                    $"{GetDateTimeInfo.GetLongDate()}  {GetDateTimeInfo.GetTime()}"));
+                // Create an OSModel instance
+                string OSInfoJSON = WebServerAgent.Serializer.SerializeJson(new OSModel(GetOSInfo.GetMachineName(),
+                                                                                        GetOSInfo.GetCurrentUserName(),
+                                                                                        GetOSInfo.GetOSInfo()));
 
 
                 ctx.Response.StatusCode = 200;
                 ctx.Response.ContentType = "text/plain";
 
-                if (!string.IsNullOrEmpty(DateTimeInfoJSON))
+                if (!string.IsNullOrEmpty(OSInfoJSON))
                 {
-                    await ctx.Response.Send(DateTimeInfoJSON);
+                    await ctx.Response.Send(OSInfoJSON);
                 }
                 else
                 {

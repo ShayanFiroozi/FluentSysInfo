@@ -48,6 +48,7 @@ namespace FluentSysInfo
                 // Map the Callbacks
 
                 .MapParameteRoute(HttpMethod.GET, "/api/SysInfo/GetDateTimeInfo/secret={secret}", GetDateTimeInfoCallBack)
+                .MapParameteRoute(HttpMethod.GET, "/api/SysInfo/GetOSInfo/secret={secret}", OSInfoCallBack)
 
                 // Build the watson web server
                 .Build();
