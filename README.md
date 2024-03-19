@@ -52,7 +52,7 @@ Since this is a new repository , there's no contributor yet! , But **FluentSysIn
  
 ## How To Use ❔
    
- - It's really simple to call the **FluentSysInfo** WebAPI.
+ - It's really simple to call the **FluentSysInfo** WebAPI :
  
  ```csharp
             string ServerSecteyKey = "FluentSysInfoSecretKeyXXX";
