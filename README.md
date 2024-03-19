@@ -98,8 +98,8 @@ It is recommended to keep the **UseAuthentication** setting enable to prevent un
 * **Date And Time Info -> /api/SysInfo/GetDateTimeInfo**  
 
 
-> **Note**:  If **UseAuthentication** settings is enable the secret key should be sent by each **Get** request.
-> **Example With Authentication** : **http://localhost:54800/api/SysInfo/GetDateTimeInfo/FluentSysInfoSecretKeyXXX**
+> :warning:  If **UseAuthentication** settings is enable the secret key should be sent by each **Get** request.
+> :information_source: **Example With Authentication** : **http://localhost:54800/api/SysInfo/GetDateTimeInfo/FluentSysInfoSecretKeyXXX**
  <br/>
  
  
