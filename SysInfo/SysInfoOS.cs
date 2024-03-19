@@ -57,7 +57,7 @@ namespace FluentSysInfo
             try
             {
                 return Environment.OSVersion != null
-                ? $"{Environment.OSVersion?.ToString()} ({(Environment.Is64BitOperatingSystem ? "64-bit" : "32-bit")})"
+                ? $"{Environment.OSVersion?.ToString()} ({GetOSArchitecture()})"
                 : "N/A";
             }
             catch
@@ -66,6 +66,8 @@ namespace FluentSysInfo
             }
         }
 
+
+        private string GetOSArchitecture() => Environment.Is64BitOperatingSystem ? "64-bit" : "32-bit";
 
     }
 }
