@@ -92,14 +92,14 @@ And the result from the **FluentSysInfo** would be something like this :
 It is recommended to keep the **UseAuthentication** setting enable to prevent unwanted access to the target machine information.
 
 <br/>
-  
+
+    
 ### Available APIs : 
 * **Date And Time Info -> /api/SysInfo/GetDateTimeInfo**  
 
 
 > **Note**:  If **UseAuthentication** settings is enable the secret key should be sent by each **Get** request.
- <br/>
-> Example : **http://localhost:54800/api/SysInfo/GetDateTimeInfo/FluentSysInfoSecretKeyXXX**
+> **Example With Authentication** : **http://localhost:54800/api/SysInfo/GetDateTimeInfo/FluentSysInfoSecretKeyXXX**
  <br/>
  
  
