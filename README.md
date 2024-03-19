@@ -32,7 +32,8 @@
     * Network And Interfaces Info  
     * Screen And Resolution Info  
     * Running Processes Info  
-    * Installed Services Info  
+    * Installed Services Info
+    * OS Info  
  <br/>  
  
  
