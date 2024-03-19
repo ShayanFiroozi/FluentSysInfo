@@ -96,7 +96,7 @@ It is recommended to keep the **UseAuthentication** setting enable to prevent un
     
 ### Available APIs : 
 * **Date And Time Info -> /api/SysInfo/GetDateTimeInfo**
-* * **OS Info -> /api/SysInfo/GetOSInfo**
+* **OS Info -> /api/SysInfo/GetOSInfo**
   
 
 <br/>  
