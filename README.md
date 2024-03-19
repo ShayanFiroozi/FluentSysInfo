@@ -3,7 +3,7 @@
 </p>
 
 # FluentSysInfo
-[![License](https://img.shields.io/github/license/shayanfiroozi/FluentSysInfo)](https://github.com/ShayanFiroozi/FluentSysInfo/blob/master/LICENSE.md)
+[![GitHub License](https://img.shields.io/github/license/ShayanFiroozi/FluentSysInfo)](https://github.com/ShayanFiroozi/FluentSysInfo/blob/master/LICENSE.md)
  
 **FluentSysInfo** provides the accessibility to the various System Informations of a local or remote machine via WebAPI
   
