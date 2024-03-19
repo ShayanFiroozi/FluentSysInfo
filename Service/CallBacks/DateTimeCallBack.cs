@@ -34,6 +34,7 @@ namespace FluentSysInfo
 
                 SysInfoDateTime GetDateTimeInfo = new SysInfoDateTime();
 
+                // Create a DateTimeModel instance
                 string DateTimeInfoJSON = WebServerAgent.Serializer.SerializeJson(new DateTimeModel(GetDateTimeInfo.GetDateTime(),
                     GetDateTimeInfo.GetDateTimeUTC(),
                     GetDateTimeInfo.GetDate(),

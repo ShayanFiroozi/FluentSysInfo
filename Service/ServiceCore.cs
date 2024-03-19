@@ -59,7 +59,7 @@ namespace FluentSysInfo
 
             // Subscrive to Watson Web Server events
             WebServerAgent.Events.ExceptionEncountered += (object sender, ExceptionEventArgs e) => ExceptionHandler.HandleException(e.Exception);
-            WebServerAgent.Events.ServerStarted += (object sender, EventArgs e) => FastLogger.logger?.LogSystem("The Watson Web Service has started.");
+            WebServerAgent.Events.ServerStarted += (object sender, EventArgs e) => FastLogger.logger?.LogSystem("The Watson Web Service has been started.");
             WebServerAgent.Events.ServerStopped += (object sender, EventArgs e) => FastLogger.logger?.LogSystem("The Watson Web Service has been stopped.");
             WebServerAgent.Events.Logger = (string log) => FastLogger.logger?.LogDebug(log, "Via Watson Internal Logger", 100);
 
@@ -75,12 +75,6 @@ namespace FluentSysInfo
             WebServerAgent?.Stop();
             WebServerAgent?.Dispose();
         }
-
-
-
-
-        // We do not need this method but we have to override it !
-        protected override Task ExecuteAsync(CancellationToken stoppingToken) => Task.CompletedTask;
 
 
         public override Task StartAsync(CancellationToken cancellationToken)
@@ -124,6 +118,11 @@ namespace FluentSysInfo
             return base.StopAsync(cancellationToken);
         }
 
+
+
+
+        // We do not need this method but we have to override it !
+        protected override Task ExecuteAsync(CancellationToken stoppingToken) => Task.CompletedTask;
 
     }
 }
