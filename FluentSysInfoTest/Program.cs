@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace FluentSysInfoTest
 {
-    internal class Program
+    internal static class Program
     {
         static async Task Main(string[] args)
         {

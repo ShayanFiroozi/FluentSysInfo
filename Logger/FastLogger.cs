@@ -23,7 +23,7 @@ namespace FluentSysInfo
     internal static class FastLogger
     {
 
-        internal static Logger logger = null;
+        public static Logger logger;
 
         internal static void InitializeLogger(string LogPath)
         {
@@ -76,9 +76,9 @@ namespace FluentSysInfo
             if (logger != null)
             {
                 // Ensure the last log(s) in the list have been processed before stopping the logger engine.
-                logger?.ProcessAllEventsInQueue().GetAwaiter().GetResult();
+                logger.ProcessAllEventsInQueue().GetAwaiter().GetResult();
 
-                logger?.StopLogger();
+                logger.StopLogger();
             }
         }
 

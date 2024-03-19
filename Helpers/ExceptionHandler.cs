@@ -32,7 +32,7 @@ namespace FluentSysInfo
 
             if (FastLogger.logger != null)
             {
-                _ = FastLogger.logger?.LogException(exception, EventId);
+                _ = FastLogger.logger.LogException(exception, EventId);
             }
 
 

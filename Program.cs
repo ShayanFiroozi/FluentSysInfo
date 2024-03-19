@@ -23,7 +23,7 @@ using System.Threading;
 
 namespace FluentSysInfo
 {
-    public class Program
+    public static class Program
     {
         public static void Main(string[] args)
         {
@@ -45,7 +45,10 @@ namespace FluentSysInfo
             {
                 FastLogger.InitializeLogger(AppContext.BaseDirectory);
             }
-            catch { }
+            catch
+            {
+                // Ignore the logger initialization and continue to run the service without logging meachanism !
+            }
 
 
             // Build up and host the service
