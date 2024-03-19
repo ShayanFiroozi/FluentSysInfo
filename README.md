@@ -85,7 +85,7 @@ And the result from the **FluentSysInfo** would be something like this :
 }
 ```
 
-> **Note**:  
+> :information_source: 
 **FluentSysInfo** settings can be easily changed via [Service Settings File](https://github.com/ShayanFiroozi/FluentSysInfo/blob/master/Settings/ServiceSettings.json).  
     
 > :warning:  
