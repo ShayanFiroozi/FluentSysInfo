@@ -73,7 +73,7 @@ It is recommended to keep the **UseAuthentication** enable to prevent unwanted a
  <br/>
  
  
-## ‼ Known Issues
+## Known Issues ‼ 
  **Not Reported Yet!** 😎
 
 <br/>
