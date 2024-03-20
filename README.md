@@ -100,7 +100,7 @@ It is recommended to keep the **UseAuthentication** setting enable to prevent un
 * **OS Info -> /api/SysInfo/GetOSInfo**
 * **CPU Info -> /api/SysInfo/GetCPUInfo**
 * **MotherBoard Info -> /api/SysInfo/GetMotherBoardInfo**
-* **MotherBoard Info -> /api/SysInfo/GetBIOSInfo**
+* **BIOS Info -> /api/SysInfo/GetBIOSInfo**
   
 
 <br/>  
@@ -109,6 +109,7 @@ It is recommended to keep the **UseAuthentication** setting enable to prevent un
 
 
 > :information_source: **Example URL With Authentication** : http://localhost:54800/api/SysInfo/GetDateTimeInfo/FluentSysInfoSecretKeyXXX
+<br/>
 > :information_source: **Example URL Without Authentication** : http://localhost:54800/api/SysInfo/GetOSInfo
  <br/>
  
