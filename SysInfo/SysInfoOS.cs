@@ -16,11 +16,16 @@
 
 
 using System;
+using System.Linq;
+using System.Management;
+using System.Runtime.Versioning;
 
 namespace FluentSysInfo
 {
     internal class SysInfoOS
     {
+
+
 
         internal string GetMachineName()
         {
@@ -64,6 +69,33 @@ namespace FluentSysInfo
             {
                 return "N/A";
             }
+        }
+
+
+        internal string GetOSSerialNumber()
+        {
+            ManagementObject wmi = null;
+            try
+            {
+                wmi = new ManagementObjectSearcher("select * from Win32_OperatingSystem")
+                   .Get()
+                   .Cast<ManagementObject>()
+                   .First();
+
+                string serialNumber = (string)wmi["SerialNumber"];
+
+                return !string.IsNullOrWhiteSpace(serialNumber) ? serialNumber : "N/A";
+            }
+            catch
+            {
+                return "N/A";
+            }
+
+            finally
+            {
+                wmi.Dispose();
+            }
+
         }
 
 

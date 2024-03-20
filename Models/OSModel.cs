@@ -10,14 +10,18 @@
 
         public string OSVersion { get; set; }
 
+        public string OSSerialNumber { get; set; }
+
 
         public OSModel(string machineName,
                        string userName,
-                       string oSVersion)
+                       string oSVersion,
+                       string oSSerialNumber)
         {
             MachineName = machineName;
             UserName = userName;
             OSVersion = oSVersion;
+            OSSerialNumber = oSSerialNumber;
         }
 
 

@@ -37,7 +37,8 @@ namespace FluentSysInfo
                 // Create an OSModel instance
                 string OSInfoJSON = WebServerAgent.Serializer.SerializeJson(new OSModel(GetOSInfo.GetMachineName(),
                                                                                         GetOSInfo.GetCurrentUserName(),
-                                                                                        GetOSInfo.GetOSInfo()));
+                                                                                        GetOSInfo.GetOSInfo(),
+                                                                                        GetOSInfo.GetOSSerialNumber()));
 
 
                 ctx.Response.StatusCode = 200;
