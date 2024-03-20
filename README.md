@@ -99,7 +99,7 @@ It is recommended to keep the **UseAuthentication** setting enable to prevent un
 * **Date And Time Info -> /api/SysInfo/GetDateTimeInfo**
 * **OS Info -> /api/SysInfo/GetOSInfo**
 * **CPU Info -> /api/SysInfo/GetCPUInfo**
-* **MotherBoard Info -> /api/SysInfo/GetGetMotherBoardInfo**
+* **MotherBoard Info -> /api/SysInfo/GetMotherBoardInfo**
   
 
 <br/>  
