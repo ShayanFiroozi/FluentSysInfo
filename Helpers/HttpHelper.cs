@@ -14,16 +14,41 @@
 
 ---------------------------------------------------------------------------------------------*/
 
-
-
-using Microsoft.Extensions.Hosting;
+using FluentConsoleNet;
+using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using WatsonWebserver.Core;
 
 namespace FluentSysInfo
 {
-    internal partial class Worker : BackgroundService
+
+    internal class HttpHelper
     {
+
+        internal async Task HttpAuthenticateThenSendData(HttpContextBase ctx, string DataToSend)
+        {
+
+            if (await CheckAuthentication(ctx))
+            {
+
+                ctx.Response.StatusCode = 200;
+                ctx.Response.ContentType = "text/plain";
+
+                if (!string.IsNullOrEmpty(DataToSend))
+                {
+                    await ctx.Response.Send(DataToSend);
+                }
+                else
+                {
+                    await ctx.Response.Send("Invalid data !");
+                }
+
+
+            }
+
+        }
+
 
 
         private async Task<bool> CheckAuthentication(HttpContextBase ctx)
@@ -42,7 +67,7 @@ namespace FluentSysInfo
                     ctx.Response.StatusCode = 401;
                     ctx.Response.ContentType = "text/plain";
 
-                    await ctx.Response.Send(WebServerAgent.Serializer.SerializeJson("Authentication failed !"));
+                    await ctx.Response.Send("Authentication failed !");
 
                     return false;
                 }
@@ -58,11 +83,7 @@ namespace FluentSysInfo
         }
 
 
-
     }
 
 
-
-
 }
-

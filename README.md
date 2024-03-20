@@ -26,6 +26,7 @@
  * **Supported System Information :**  
     * Date Time Info  
     * Main Board Info  
+    * BIOS Info  
     * CPU Info  
     * Memory Info  
     * Disk And Drive Info  
@@ -97,6 +98,8 @@ It is recommended to keep the **UseAuthentication** setting enable to prevent un
 ### Available APIs : 
 * **Date And Time Info -> /api/SysInfo/GetDateTimeInfo**
 * **OS Info -> /api/SysInfo/GetOSInfo**
+* **CPU Info -> /api/SysInfo/GetCPUInfo**
+* **MotherBoard Info -> /api/SysInfo/GetGetMotherBoardInfo**
   
 
 <br/>  

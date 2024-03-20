@@ -29,41 +29,31 @@ namespace FluentSysInfo
         private async Task GetDateTimeInfoCallBack(HttpContextBase ctx)
         {
 
-            if (await CheckAuthentication(ctx))
-            {
-
-                SysInfoDateTime GetDateTimeInfo = new SysInfoDateTime();
-
-                // Create a DateTimeModel instance
-                string DateTimeInfoJSON = WebServerAgent.Serializer.SerializeJson(new DateTimeModel(GetDateTimeInfo.GetDateTime(),
-                    GetDateTimeInfo.GetDateTimeUTC(),
-                    GetDateTimeInfo.GetDate(),
-                    GetDateTimeInfo.GetTime(),
-                    GetDateTimeInfo.GetLongDate(),
-                    $"{GetDateTimeInfo.GetLongDate()}  {GetDateTimeInfo.GetTime()}"));
+            SysInfoDateTime GetDateTimeInfo = new SysInfoDateTime();
 
 
-                ctx.Response.StatusCode = 200;
-                ctx.Response.ContentType = "text/plain";
-
-                if (!string.IsNullOrEmpty(DateTimeInfoJSON))
-                {
-                    await ctx.Response.Send(DateTimeInfoJSON);
-                }
-                else
-                {
-                    await ctx.Response.Send(WebServerAgent.Serializer.SerializeJson("Invalid data !"));
-                }
+            string DateTimeInfoJSON = WebServerAgent.Serializer.SerializeJson(new DateTimeModel(GetDateTimeInfo.GetDateTime(),
+                GetDateTimeInfo.GetDateTimeUTC(),
+                GetDateTimeInfo.GetDate(),
+                GetDateTimeInfo.GetTime(),
+                GetDateTimeInfo.GetLongDate(),
+                $"{GetDateTimeInfo.GetLongDate()}  {GetDateTimeInfo.GetTime()}",
+                GetDateTimeInfo.GetDayOfWeek()));
 
 
-            }
+            await new HttpHelper().HttpAuthenticateThenSendData(ctx, DateTimeInfoJSON);
+
 
         }
 
 
 
+
+
+
     }
-
-
 }
+
+
+
 

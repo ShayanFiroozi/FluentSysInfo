@@ -14,31 +14,34 @@
 
 ---------------------------------------------------------------------------------------------*/
 
-
-
-using Microsoft.Extensions.Hosting;
+using FluentConsoleNet;
+using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
-using WatsonWebserver.Core;
 
 namespace FluentSysInfo
 {
-    internal partial class Worker : BackgroundService
+
+    internal class JSONHelper
     {
 
-
-        private async Task CPUInfoCallBack(HttpContextBase ctx)
+        internal string ConvertPowerShellResultToJSON(string Result, bool IgnoreEmptyResults = true)
         {
+            try
+            {
+                return Result;
+            }
 
-            await new HttpHelper().HttpAuthenticateThenSendData(ctx, new SysInfoCPU().GetCPUInfo());
-
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
+
+
+
 
     }
 
 
-
 }
-
-
-
-

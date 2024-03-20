@@ -13,6 +13,8 @@
 
         public string LongDate { get; set; }
 
+        public string DayOfWeek { get; set; }
+
         public string FullDateTime { get; set; }
 
 
@@ -22,7 +24,8 @@
                              string dateOnly,
                              string timeOnly,
                              string longDate,
-                             string fullDateTime)
+                             string fullDateTime,
+                             string dayOfWeek)
         {
             DateTime = dateTime;
             DateTimeUTC = dateTimeUTC;
@@ -30,6 +33,7 @@
             TimeOnly = timeOnly;
             LongDate = longDate;
             FullDateTime = fullDateTime;
+            DayOfWeek = dayOfWeek;
         }
 
 

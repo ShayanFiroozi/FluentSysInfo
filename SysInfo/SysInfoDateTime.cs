@@ -22,20 +22,22 @@ namespace FluentSysInfo
     internal class SysInfoDateTime
     {
 
-    
+
         internal string GetDateTime() => DateTime.Now.ToString();
 
         internal string GetDateTimeUTC() => DateTime.UtcNow.ToString();
 
 
-  
+
         internal string GetDate() => DateTime.Now.ToShortDateString();
         internal string GetLongDate() => DateTime.Now.ToLongDateString();
 
 
-   
+
         internal string GetTime() => DateTime.Now.ToLongTimeString();
         internal string GetShortTime() => DateTime.Now.ToShortTimeString();
+
+        internal string GetDayOfWeek() => DateTime.Now.DayOfWeek.ToString();
 
 
         internal string GetFullDateTime() => $"{GetLongDate()}  {GetTime()}";

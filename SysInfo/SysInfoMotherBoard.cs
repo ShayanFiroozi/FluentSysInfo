@@ -14,31 +14,18 @@
 
 ---------------------------------------------------------------------------------------------*/
 
-
-
-using Microsoft.Extensions.Hosting;
-using System.Threading.Tasks;
-using WatsonWebserver.Core;
-
 namespace FluentSysInfo
 {
-    internal partial class Worker : BackgroundService
+    internal class SysInfoMotherBoard
     {
 
 
-        private async Task CPUInfoCallBack(HttpContextBase ctx)
+        internal string GetMotherBoardInfo()
         {
-
-            await new HttpHelper().HttpAuthenticateThenSendData(ctx, new SysInfoCPU().GetCPUInfo());
-
+            return new PowerShellHelper()
+                         .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class Win32_BaseBoard -ErrorAction Stop | Select-Object *", true);
         }
 
+
     }
-
-
-
 }
-
-
-
-

@@ -29,32 +29,7 @@ namespace FluentSysInfo
         private async Task OSInfoCallBack(HttpContextBase ctx)
         {
 
-            if (await CheckAuthentication(ctx))
-            {
-
-                SysInfoOS GetOSInfo = new SysInfoOS();
-
-                // Create an OSModel instance
-                string OSInfoJSON = WebServerAgent.Serializer.SerializeJson(new OSModel(GetOSInfo.GetMachineName(),
-                                                                                        GetOSInfo.GetCurrentUserName(),
-                                                                                        GetOSInfo.GetOSInfo(),
-                                                                                        GetOSInfo.GetOSSerialNumber()));
-
-
-                ctx.Response.StatusCode = 200;
-                ctx.Response.ContentType = "text/plain";
-
-                if (!string.IsNullOrEmpty(OSInfoJSON))
-                {
-                    await ctx.Response.Send(OSInfoJSON);
-                }
-                else
-                {
-                    await ctx.Response.Send(WebServerAgent.Serializer.SerializeJson("Invalid data !"));
-                }
-
-
-            }
+            await new HttpHelper().HttpAuthenticateThenSendData(ctx, new SysInfoOS().GetOSInfo());
 
         }
 
