@@ -33,7 +33,7 @@
     ✔ Disk And Drive Info  
     ✔ Network And Interfaces Info  
     ✔ Screen And Resolution Info  
-    ✔ Running Processes Info  
+    ✔ Running Processes Info (With optional full process details)  
     ✔ Installed Services Info  
     
  <br/>  
@@ -100,9 +100,11 @@ It is recommended to keep the **UseAuthentication** setting enable to prevent un
 * **Date And Time Info -> /api/SysInfo/GetDateTimeInfo**
 * **OS Info -> /api/SysInfo/GetOSInfo**
 * **CPU Info -> /api/SysInfo/GetCPUInfo**
-* **MotherBoard Info -> /api/SysInfo/GetMotherBoardInfo**
+* **Mother Board Info -> /api/SysInfo/GetMotherBoardInfo**
 * **BIOS Info -> /api/SysInfo/GetBIOSInfo**
-* **PhysicalMemory Info -> /api/SysInfo/GetPhysicalMemoryInfo**
+* **Physica lMemory Info -> /api/SysInfo/GetPhysicalMemoryInfo**
+* **Running Processes Info -> /api/SysInfo/GetRunningProcessesInfo**
+* **Running Processes Info with full details -> /api/SysInfo/GetRunningProcessesDetailsInfo**
   
 
 <br/>  
