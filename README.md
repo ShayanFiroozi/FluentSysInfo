@@ -25,16 +25,17 @@
  **FluentSysInfo features :**
  * **Supported System Information :**  
     * Date Time Info  
+    * OS Info
     * Main Board Info  
     * BIOS Info  
     * CPU Info  
-    * Memory Info  
+    * PhysicalMemory Info  
     * Disk And Drive Info  
     * Network And Interfaces Info  
     * Screen And Resolution Info  
     * Running Processes Info  
-    * Installed Services Info
-    * OS Info  
+    * Installed Services Info  
+    
  <br/>  
  
  
@@ -101,6 +102,7 @@ It is recommended to keep the **UseAuthentication** setting enable to prevent un
 * **CPU Info -> /api/SysInfo/GetCPUInfo**
 * **MotherBoard Info -> /api/SysInfo/GetMotherBoardInfo**
 * **BIOS Info -> /api/SysInfo/GetBIOSInfo**
+* **PhysicalMemory Info -> /api/SysInfo/GetPhysicalMemoryInfo**
   
 
 <br/>  

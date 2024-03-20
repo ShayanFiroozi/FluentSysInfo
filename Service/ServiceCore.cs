@@ -52,7 +52,8 @@ namespace FluentSysInfo
                 .MapParameteRoute(HttpMethod.GET, "/api/SysInfo/GetCPUInfo/secret={secret}", CPUInfoCallBack)
                 .MapParameteRoute(HttpMethod.GET, "/api/SysInfo/GetMotherBoardInfo/secret={secret}", CPUMotherBoardCallBack)
                 .MapParameteRoute(HttpMethod.GET, "/api/SysInfo/GetBIOSInfo/secret={secret}", BIOSInfoCallBack)
-
+                .MapParameteRoute(HttpMethod.GET, "/api/SysInfo/GetPhysicalMemoryInfo/secret={secret}", PhysicalMemoryInfoCallBack)
+                
                 // Build the watson web server
                 .Build();
 
