@@ -25,7 +25,7 @@
  **FluentSysInfo features :**
  * **Supported System Information :**  
     ✔ Date Time Info  
-    ✔ OS Info
+    ✔ OS Info  
     ✔ Main Board Info  
     ✔ BIOS Info  
     ✔ CPU Info  
