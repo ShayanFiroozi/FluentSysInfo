@@ -34,7 +34,7 @@
     ✔ Network And Interfaces Info  
     ✔ Screen And Resolution Info  
     ✔ Running Processes Info  
-    ✔ Installed Services Info  
+    ✔ Windows Services Info  
     
  <br/>  
  
