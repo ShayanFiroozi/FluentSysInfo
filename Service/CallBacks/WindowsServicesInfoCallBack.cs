@@ -14,20 +14,38 @@
 
 ---------------------------------------------------------------------------------------------*/
 
+
+
+using Microsoft.Extensions.Hosting;
+using System.Threading.Tasks;
+using WatsonWebserver.Core;
+
 namespace FluentSysInfo
 {
-    internal class SysInfoRunningProcesses
+    internal partial class Worker : BackgroundService
     {
 
 
-        internal string GetRunningProcessesInfo()
+        private async Task WindowsServicesInfoCallBack(HttpContextBase ctx)
         {
 
-            return new PowerShellHelper()
-            .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class CIM_Process -ErrorAction Stop | Select-Object *", true);
+            await new HttpHelper().HttpAuthenticateThenSendData(ctx, new SysInfoWindowsServices().GetWindowsServicesInfo());
 
         }
 
+        private async Task WindowsServicesDetailsInfoCallBack(HttpContextBase ctx)
+        {
+
+            await new HttpHelper().HttpAuthenticateThenSendData(ctx, new SysInfoWindowsServices().GetWindowsServicesInfo());
+
+        }
 
     }
+
+
+
 }
+
+
+
+

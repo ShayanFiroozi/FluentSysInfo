@@ -29,14 +29,14 @@ namespace FluentSysInfo
         private async Task RunningProcessesInfoCallBack(HttpContextBase ctx)
         {
 
-            await new HttpHelper().HttpAuthenticateThenSendData(ctx, new SysInfoRunningProcesses().GetRunningProcessesInfo(false));
+            await new HttpHelper().HttpAuthenticateThenSendData(ctx, new SysInfoRunningProcesses().GetRunningProcessesInfo());
 
         }
 
         private async Task RunningProcessesDetailsInfoCallBack(HttpContextBase ctx)
         {
 
-            await new HttpHelper().HttpAuthenticateThenSendData(ctx, new SysInfoRunningProcesses().GetRunningProcessesInfo(true));
+            await new HttpHelper().HttpAuthenticateThenSendData(ctx, new SysInfoRunningProcesses().GetRunningProcessesInfo());
 
         }
 

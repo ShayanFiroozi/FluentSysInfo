@@ -33,7 +33,7 @@
     ✔ Disk And Drive Info  
     ✔ Network And Interfaces Info  
     ✔ Screen And Resolution Info  
-    ✔ Running Processes Info (With optional full process details)  
+    ✔ Running Processes Info  
     ✔ Installed Services Info  
     
  <br/>  
@@ -104,7 +104,7 @@ It is recommended to keep the **UseAuthentication** setting enable to prevent un
 * **BIOS Info -> /api/SysInfo/GetBIOSInfo**
 * **Physica lMemory Info -> /api/SysInfo/GetPhysicalMemoryInfo**
 * **Running Processes Info -> /api/SysInfo/GetRunningProcessesInfo**
-* **Running Processes Info with full details -> /api/SysInfo/GetRunningProcessesDetailsInfo**
+* **Windows Services Info -> /api/SysInfo/GetWindowsServicesInfo**
   
 
 <br/>  

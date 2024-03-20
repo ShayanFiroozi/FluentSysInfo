@@ -16,15 +16,15 @@
 
 namespace FluentSysInfo
 {
-    internal class SysInfoRunningProcesses
+    internal class SysInfoWindowsServices
     {
 
 
-        internal string GetRunningProcessesInfo()
+        internal string GetWindowsServicesInfo()
         {
 
             return new PowerShellHelper()
-            .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class CIM_Process -ErrorAction Stop | Select-Object *", true);
+            .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class Win32_Service -ErrorAction Stop | Select-Object *", true);
 
         }
 
