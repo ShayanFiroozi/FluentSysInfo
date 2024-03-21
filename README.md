@@ -31,7 +31,7 @@
     ✔ CPU Info  
     ✔ PhysicalMemory Info  
     ✔ Disk And Drive Info  
-    ✔ Network And Interfaces Info  
+    ✔ Network Interfaces Info  
     ✔ Graphic Card Info  
     ✔ Running Processes Info  
     ✔ Windows Services Info  
@@ -106,6 +106,7 @@ It is recommended to keep the **UseAuthentication** setting enable to prevent un
 * **Running Processes Info -> /api/SysInfo/GetRunningProcessesInfo**
 * **Windows Services Info -> /api/SysInfo/GetWindowsServicesInfo**
 * **Graphic Card Info -> /api/SysInfo/GetGraphicCardInfo**
+* **Network Interface(s) Info -> /api/SysInfo/GetNetworkInterfaceInfo**
   
 
 <br/>  
