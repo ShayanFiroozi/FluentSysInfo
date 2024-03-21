@@ -63,7 +63,8 @@ namespace FluentSysInfo
                         // Ignore the lines without ':' character ! ( may be it's an unwanted description , bad result or useless property !!)
                         if (!line.Contains(':')) continue;
 
-                        string[] lineSections = line.Split(':');
+                        // Split just first occurance of ':' character
+                        string[] lineSections = line.Split(new char[] { ':' }, 2);
 
                         // Trim the line sections
                         lineSections[0] = lineSections[0].Trim();
@@ -92,7 +93,7 @@ namespace FluentSysInfo
 
                     }
 
-                    catch { /*Ignore the lopp internal possible exception ...*/ }
+                    catch (Exception ex) { /*Ignore the lopp internal possible exception ...*/ }
 
                 }
 
