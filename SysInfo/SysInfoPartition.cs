@@ -16,14 +16,14 @@
 
 namespace FluentSysInfo
 {
-    internal class SysInfoDisk
+    internal class SysInfoPartition
     {
 
 
-        internal string GetDiskInfo()
+        internal string GetPartitionInfo()
         {
             return new PowerShellHelper()
-                         .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class CIM_DiskDrive -ErrorAction Stop | Select-Object *", true);
+                         .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class CIM_DiskPartition -ErrorAction Stop | Select-Object *", true);
         }
 
 

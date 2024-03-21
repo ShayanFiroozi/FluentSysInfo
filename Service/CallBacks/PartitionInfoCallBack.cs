@@ -14,18 +14,31 @@
 
 ---------------------------------------------------------------------------------------------*/
 
+
+
+using Microsoft.Extensions.Hosting;
+using System.Threading.Tasks;
+using WatsonWebserver.Core;
+
 namespace FluentSysInfo
 {
-    internal class SysInfoDisk
+    internal partial class Worker : BackgroundService
     {
 
 
-        internal string GetDiskInfo()
+        private async Task PartitionInfoCallBack(HttpContextBase ctx)
         {
-            return new PowerShellHelper()
-                         .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class CIM_DiskDrive -ErrorAction Stop | Select-Object *", true);
+
+            await new HttpHelper().HttpAuthenticateThenSendData(ctx, new SysInfoPartition().GetPartitionInfo());
+
         }
 
-
     }
+
+
+
 }
+
+
+
+

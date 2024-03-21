@@ -30,7 +30,7 @@
     ✔ BIOS Info  
     ✔ CPU Info  
     ✔ PhysicalMemory Info  
-    ✔ Disk And Drive Info  
+    ✔ Disk , Partition And Drive Info  
     ✔ Network Interfaces Info  
     ✔ Graphic Card Info  
     ✔ Running Processes Info  
@@ -104,7 +104,9 @@ It is recommended to keep the **UseAuthentication** setting enable to prevent un
 * **Graphic Card Info -> /api/SysInfo/GetGraphicCardInfo**
 * **Network Interface(s) Info -> /api/SysInfo/GetNetworkInterfaceInfo**
 * **Disk(s) Info -> /api/SysInfo/GetDiskInfo**
-* **Disk Drive(s) Info -> /api/SysInfo/GetDrivesInfo**
+* **Disk's Partition(s) Info -> /api/SysInfo/GetPartitionInfo**
+* **Logical Drive(s) Info -> /api/SysInfo/GetDriveInfo**
+
 
   
 
