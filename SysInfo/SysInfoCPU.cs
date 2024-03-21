@@ -16,11 +16,11 @@
 
 namespace FluentSysInfo
 {
-    internal class SysInfoCPU
+    internal class SysInfoCpu
     {
 
 
-        internal string GetCPUInfo()
+        internal string GetCpuInfo()
         {
             return new PowerShellHelper()
                          .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class CIM_Processor -ErrorAction Stop | Select-Object *", true);

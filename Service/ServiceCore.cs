@@ -48,10 +48,10 @@ namespace FluentSysInfo
                 // Map the Callbacks
 
                 .MapParameteRoute(HttpMethod.GET, "/api/SysInfo/GetDateTimeInfo/secret={secret}", GetDateTimeInfoCallBack)
-                .MapParameteRoute(HttpMethod.GET, "/api/SysInfo/GetOSInfo/secret={secret}", OSInfoCallBack)
-                .MapParameteRoute(HttpMethod.GET, "/api/SysInfo/GetCPUInfo/secret={secret}", CPUInfoCallBack)
+                .MapParameteRoute(HttpMethod.GET, "/api/SysInfo/GetOsInfo/secret={secret}", OSInfoCallBack)
+                .MapParameteRoute(HttpMethod.GET, "/api/SysInfo/GetCpuInfo/secret={secret}", CPUInfoCallBack)
                 .MapParameteRoute(HttpMethod.GET, "/api/SysInfo/GetMotherBoardInfo/secret={secret}", CPUMotherBoardCallBack)
-                .MapParameteRoute(HttpMethod.GET, "/api/SysInfo/GetBIOSInfo/secret={secret}", BIOSInfoCallBack)
+                .MapParameteRoute(HttpMethod.GET, "/api/SysInfo/GetBiosInfo/secret={secret}", BIOSInfoCallBack)
                 .MapParameteRoute(HttpMethod.GET, "/api/SysInfo/GetPhysicalMemoryInfo/secret={secret}", PhysicalMemoryInfoCallBack)
                 .MapParameteRoute(HttpMethod.GET, "/api/SysInfo/GetRunningProcessesInfo/secret={secret}", RunningProcessesInfoCallBack)
                 .MapParameteRoute(HttpMethod.GET, "/api/SysInfo/GetWindowsServicesInfo/secret={secret}", WindowsServicesInfoCallBack)

@@ -46,7 +46,7 @@ namespace FluentSysInfo
 
                     if (!string.IsNullOrWhiteSpace(output))
                     {
-                        return AsJSON ? new JSONHelper().ConvertPowerShellResultToJSON(output) : output;
+                        return AsJSON ? new JsonHelper().ConvertPowerShellResultToJSON(output) : output;
                     }
                     else
                     {

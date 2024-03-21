@@ -22,7 +22,7 @@ using System.Text;
 namespace FluentSysInfo
 {
 
-    internal class JSONHelper
+    internal class JsonHelper
     {
 
         internal string ConvertPowerShellResultToJSON(string PowerShellResult)
@@ -93,7 +93,8 @@ namespace FluentSysInfo
 
         private string[] ParseAndNormalizeThePowerShellResult(string PowerShellRawResult)
         {
-            string result = string.Empty;
+
+            StringBuilder result = new StringBuilder();
 
             try
             {
@@ -106,9 +107,9 @@ namespace FluentSysInfo
                     try
                     {
                         // Handle the empty lines !
-                        if (line == string.Empty && result != string.Empty)
+                        if (line == string.Empty && result.Length != 0)
                         {
-                            result += Environment.NewLine;
+                            result.Append(Environment.NewLine);
                             continue;
                         }
 
@@ -130,13 +131,13 @@ namespace FluentSysInfo
                         if (IsUnWantedCIMClass(lineSections[0])) continue;
 
 
-                        if (result == string.Empty)
+                        if (result.Length == 0)
                         {
-                            result += $"{lineSections[0]}:{lineSections[1]}";
+                            result.Append($"{lineSections[0]}:{lineSections[1]}");
                         }
                         else
                         {
-                            result += $"{Environment.NewLine}{lineSections[0]}:{lineSections[1]}";
+                            result.Append($"{Environment.NewLine}{lineSections[0]}:{lineSections[1]}");
                         }
 
 
@@ -146,7 +147,7 @@ namespace FluentSysInfo
 
                 }
 
-                return result.TrimEnd().Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+                return result.ToString().TrimEnd().Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
 
             }
             catch (Exception ex)

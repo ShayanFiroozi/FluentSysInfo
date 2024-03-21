@@ -29,7 +29,7 @@ namespace FluentSysInfo
         private async Task BIOSInfoCallBack(HttpContextBase ctx)
         {
 
-            await new HttpHelper().HttpAuthenticateThenSendData(ctx, new SysInfoBIOS().GetBIOSInfo());
+            await new HttpHelper().HttpAuthenticateThenSendData(ctx, new SysInfoBios().GetBiosInfo());
 
         }
 

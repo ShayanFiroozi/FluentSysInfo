@@ -96,7 +96,7 @@ And the result from the **FluentSysInfo** would be something like this :
  
  ```csharp
             string ServerSecteyKey = "FluentSysInfoSecretKeyXXX";
-            string TargetUrl = $"http://localhost:54800/api/SysInfo/GetOSInfo/{ServerSecteyKey}";
+            string TargetUrl = $"http://localhost:54800/api/SysInfo/GetOsInfo/{ServerSecteyKey}";
 
             using (HttpClient client = new HttpClient())
             {
@@ -188,10 +188,10 @@ It is recommended to keep the **UseAuthentication** setting enable to prevent un
     
 ### Available APIs : 
 * **Date And Time Info -> /api/SysInfo/GetDateTimeInfo**
-* **OS Info -> /api/SysInfo/GetOSInfo**
-* **CPU Info -> /api/SysInfo/GetCPUInfo**
+* **OS Info -> /api/SysInfo/GetOsInfo**
+* **CPU Info -> /api/SysInfo/GetCpuInfo**
 * **Mother Board Info -> /api/SysInfo/GetMotherBoardInfo**
-* **BIOS Info -> /api/SysInfo/GetBIOSInfo**
+* **BIOS Info -> /api/SysInfo/GetBiosInfo**
 * **Physical Memory Info -> /api/SysInfo/GetPhysicalMemoryInfo**
 * **Running Processes Info -> /api/SysInfo/GetRunningProcessesInfo**
 * **Windows Services Info -> /api/SysInfo/GetWindowsServicesInfo**
@@ -213,7 +213,7 @@ It is recommended to keep the **UseAuthentication** setting enable to prevent un
 <br/>
 
 
-> :information_source: **Example Without Authentication** : http://localhost:54800/api/SysInfo/GetOSInfo
+> :information_source: **Example Without Authentication** : http://localhost:54800/api/SysInfo/GetOsInfo
  <br/>
  
  

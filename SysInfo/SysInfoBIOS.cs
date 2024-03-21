@@ -16,11 +16,11 @@
 
 namespace FluentSysInfo
 {
-    internal class SysInfoBIOS
+    internal class SysInfoBios
     {
 
 
-        internal string GetBIOSInfo()
+        internal string GetBiosInfo()
         {
             return new PowerShellHelper()
                          .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class CIM_BIOSElement -ErrorAction Stop | Select-Object *", true);
