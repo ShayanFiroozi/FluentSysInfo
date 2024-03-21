@@ -2,7 +2,7 @@
  <img src="https://github.com/ShayanFiroozi/FluentSysInfo/blob/master/Icon.ico"
 </p>
 
-# FluentSysInfo <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white"/>
+# FluentSysInfo <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white"/> <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white"/>
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=ShayanFiroozi_FluentSysInfo&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=ShayanFiroozi_FluentSysInfo)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=ShayanFiroozi_FluentSysInfo&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=ShayanFiroozi_FluentSysInfo)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=ShayanFiroozi_FluentSysInfo&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=ShayanFiroozi_FluentSysInfo)
@@ -49,8 +49,8 @@ Since this is a new repository , there's no contributor yet! But **FluentSysInfo
 <br/>
  
 ## How To Use ❔
-   
- - It's really simple to call the **FluentSysInfo** WebAPI :
+It's really simple to call the **FluentSysInfo** WebAPI :
+ - Example for the Date Time : ⬇
 <p align="center">
 <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white"
 </p>
@@ -88,6 +88,94 @@ And the result from the **FluentSysInfo** would be something like this :
   "FullDateTime": "Tuesday, March 19, 2024  3:51:49 PM"
 }
 ```
+
+- Example for the OS Info : ⬇
+<p align="center">
+<img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white"
+</p>
+ 
+ ```csharp
+            string ServerSecteyKey = "FluentSysInfoSecretKeyXXX";
+            string TargetUrl = $"http://localhost:54800/api/SysInfo/GetOSInfo/{ServerSecteyKey}";
+
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync(TargetUrl);
+
+                string result = await response.Content.ReadAsStringAsync();
+
+                Console.WriteLine(result);
+
+            }
+
+            Console.ReadLine();
+
+```   
+
+And the result from the **FluentSysInfo** would be something like this :  
+<p align="center">
+<img src="https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white"
+</p>
+ 
+```json
+{
+ "Status": "OK",
+ "Name": "Microsoft Windows 10 Enterprise|C:\\Windows|\\Device\\Harddisk1\\Partition3",
+ "FreePhysicalMemory": "9428600",
+ "FreeSpaceInPagingFiles": "2479588",
+ "FreeVirtualMemory": "9278148",
+ "Caption": "Microsoft Windows 10 Enterprise",
+ "Description": "Removed! 😎",
+ "InstallDate": "9/30/2022 1:36:54 PM",
+ "CSName": "Removed! 😉",
+ "CurrentTimeZone": "210",
+ "Distributed": "False",
+ "LastBootUpTime": "3/21/2024 6:56:09 AM",
+ "LocalDateTime": "3/21/2024 11:39:42 PM",
+ "MaxNumberOfProcesses": "4294967295",
+ "MaxProcessMemorySize": "137438953344",
+ "NumberOfLicensedUsers": "0",
+ "NumberOfProcesses": "222",
+ "NumberOfUsers": "2",
+ "OSType": "18",
+ "SizeStoredInPagingFiles": "2490368",
+ "TotalVirtualMemorySize": "19224724",
+ "TotalVisibleMemorySize": "16734356",
+ "Version": "10.0.19045",
+ "BootDevice": "\\Device\\HarddiskVolume10",
+ "BuildNumber": "19045",
+ "BuildType": "Multiprocessor Free",
+ "CodeSet": "1252",
+ "CountryCode": "1",
+ "DataExecutionPrevention_32BitApplications": "True",
+ "DataExecutionPrevention_Available": "True",
+ "DataExecutionPrevention_Drivers": "True",
+ "DataExecutionPrevention_SupportPolicy": "2",
+ "Debug": "False",
+ "EncryptionLevel": "256",
+ "ForegroundApplicationBoost": "2",
+ "Locale": "0409",
+ "Manufacturer": "Microsoft Corporation",
+ "MUILanguages": "{en-US}",
+ "OperatingSystemSKU": "4",
+ "OSArchitecture": "64-bit",
+ "OSLanguage": "1033",
+ "OSProductSuite": "256",
+ "PortableOperatingSystem": "False",
+ "Primary": "True",
+ "ProductType": "1",
+ "RegisteredUser": "Shayan",
+ "SerialNumber": "00329-00000-00003-AA310",
+ "ServicePackMajorVersion": "0",
+ "ServicePackMinorVersion": "0",
+ "SuiteMask": "272",
+ "SystemDevice": "\\Device\\HarddiskVolume12",
+ "SystemDirectory": "C:\\Windows\\system32",
+ "SystemDrive": "C:",
+ "WindowsDirectory": "C:\\Windows"
+}
+```
+
 
 > :information_source: 
 **FluentSysInfo** settings can be easily changed via [Service Settings File](https://github.com/ShayanFiroozi/FluentSysInfo/blob/master/Settings/ServiceSettings.json).  
@@ -141,6 +229,10 @@ See [**LICENSE**](LICENSE.md) for more details.
 <br/>
  
 ## 🛠 How to build
+<p align="center">
+<img src="https://img.shields.io/badge/Visual_Studio-5C2D91?style=for-the-badge&logo=visual%20studio&logoColor=white"
+</p>
+  
 Use **Visual Studio 2022** and open the solution 'FluentSysInfo.sln'.
 
 **FluentSysInfo** solution is setup to support following .Net versions :
@@ -156,7 +248,7 @@ Since the **FluentSysInfo** solution is supporting multi target frameworks , to 
 
 <br/>
  
-## Donations 💲
+## Donations 💲 <img src="https://img.shields.io/badge/Bitcoin-000000?style=for-the-badge&logo=bitcoin&logoColor=white"/> <img src="https://img.shields.io/badge/tether-168363?style=for-the-badge&logo=tether&logoColor=white"/> <img src="https://img.shields.io/badge/dogecoin-C2A633?style=for-the-badge&logo=dogecoin&logoColor=white"/> <img src="https://img.shields.io/badge/Ethereum-3C3C3D?style=for-the-badge&logo=Ethereum&logoColor=white"/>
 If you would like to financially support **FluentSysInfo**, first of all, thank you! Please read [**DONATIONS**](DONATIONS.md) for my crypto wallets !
 
 <br/>
