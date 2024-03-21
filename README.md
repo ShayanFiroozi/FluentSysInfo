@@ -41,7 +41,7 @@
   
  
 ## Contributions 🤝
-Since this is a new repository , there's no contributor yet! , But **FluentSysInfo** welcomes and appreciates any contribution , pull request or bug report.
+Since this is a new repository , there's no contributor yet! But **FluentSysInfo** welcomes and appreciates any contribution , pull request or bug report.
 
  
 
