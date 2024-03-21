@@ -57,8 +57,9 @@ namespace FluentSysInfo
                 .MapParameteRoute(HttpMethod.GET, "/api/SysInfo/GetWindowsServicesInfo/secret={secret}", WindowsServicesInfoCallBack)
                 .MapParameteRoute(HttpMethod.GET, "/api/SysInfo/GetGraphicCardInfo/secret={secret}", GraphicCardInfoCallBack)
                 .MapParameteRoute(HttpMethod.GET, "/api/SysInfo/GetNetworkInterfaceInfo/secret={secret}", NetworkInterfaceInfoCallBack)
+                .MapParameteRoute(HttpMethod.GET, "/api/SysInfo/GetDiskInfo/secret={secret}", DiskInfoCallBack)
 
-                
+
 
 
 

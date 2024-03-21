@@ -103,6 +103,9 @@ It is recommended to keep the **UseAuthentication** setting enable to prevent un
 * **Windows Services Info -> /api/SysInfo/GetWindowsServicesInfo**
 * **Graphic Card Info -> /api/SysInfo/GetGraphicCardInfo**
 * **Network Interface(s) Info -> /api/SysInfo/GetNetworkInterfaceInfo**
+* * **Network Interface(s) Info -> /api/SysInfo/GetDiskInfo**
+* * **Network Interface(s) Info -> /api/SysInfo/GetDrivesInfo**
+
   
 
 <br/>  
