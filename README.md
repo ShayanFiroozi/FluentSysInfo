@@ -102,7 +102,7 @@ It is recommended to keep the **UseAuthentication** setting enable to prevent un
 * **CPU Info -> /api/SysInfo/GetCPUInfo**
 * **Mother Board Info -> /api/SysInfo/GetMotherBoardInfo**
 * **BIOS Info -> /api/SysInfo/GetBIOSInfo**
-* **Physica lMemory Info -> /api/SysInfo/GetPhysicalMemoryInfo**
+* **Physical Memory Info -> /api/SysInfo/GetPhysicalMemoryInfo**
 * **Running Processes Info -> /api/SysInfo/GetRunningProcessesInfo**
 * **Windows Services Info -> /api/SysInfo/GetWindowsServicesInfo**
 * **Graphic Card Info -> /api/SysInfo/GetGraphicCardInfo**
