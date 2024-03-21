@@ -14,8 +14,10 @@
 
 ---------------------------------------------------------------------------------------------*/
 
+using FastLog.Models;
 using System;
 using System.Linq;
+using System.Text;
 
 namespace FluentSysInfo
 {
@@ -27,8 +29,59 @@ namespace FluentSysInfo
         {
             try
             {
+                StringBuilder JsonResultBuilder = new StringBuilder();
 
-                return string.Join(Environment.NewLine, ParseAndNormalizeThePowerShellResult(PowerShellResult));
+                // Add the first Json format '{' character
+                _ = JsonResultBuilder.Append('{').Append('\n');
+
+
+
+                // Process each normalized line
+                foreach (string NormalizedLine in ParseAndNormalizeThePowerShellResult(PowerShellResult))
+                {
+
+                    if (!string.IsNullOrEmpty(NormalizedLine))
+                    {
+
+                        // Ignore the lines without ':' character ! ( may be it's an unwanted description , bad result or useless property !!)
+                        if (!NormalizedLine.Contains(':')) continue;
+
+                        // Split just first occurance of ':' character
+                        string[] NormalizedLineSections = NormalizedLine.Split(new char[] { ':' }, 2);
+
+                        JsonResultBuilder.Append($" \"{NormalizedLineSections[0].Trim()}\": \"{NormalizedLineSections[1].Trim()}\"")
+                                  .Append(',').Append('\n');
+
+                    }
+                    else // Close the last Json section and open a new one !!
+
+                    {
+                        // Remove the trailing ',' character from the last JSON section
+                        _ = JsonResultBuilder.Remove(JsonResultBuilder.Length - 2, 1);
+
+
+                        // Close the the last Json bracket
+                        _ = JsonResultBuilder.Append('}').Append('\n');
+
+                        // Open the new bracket
+                        _ = JsonResultBuilder.Append('{').Append('\n');
+                    }
+
+
+                }
+
+
+                // Remove the last trailing ',' character.
+                _ = JsonResultBuilder.Remove(JsonResultBuilder.Length - 2, 1);
+
+
+                // Add the last '}' Json bracket ;)
+                _ = JsonResultBuilder.Append('}');
+
+
+                return JsonResultBuilder.ToString();
+
+
             }
 
             catch (Exception ex)
