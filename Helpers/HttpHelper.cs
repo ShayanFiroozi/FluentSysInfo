@@ -38,7 +38,7 @@ namespace FluentSysInfo
                 }
                 else
                 {
-                    await ctx.Response.Send("Invalid data !");
+                    await ctx.Response.Send("No Data !");
                 }
 
 

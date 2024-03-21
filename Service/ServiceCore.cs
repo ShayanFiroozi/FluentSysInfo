@@ -37,6 +37,9 @@ namespace FluentSysInfo
             // Load Service Settings
             Settings.LoadServiceSettings();
 
+            WindowsServicesFastResponse.StartFastResponse();
+            RunningProcessesFastResponse.StartFastResponse();
+
         }
 
         private void StartWebServer()
