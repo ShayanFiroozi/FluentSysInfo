@@ -91,7 +91,7 @@ namespace FluentSysInfo
         }
 
 
-        internal string[] ParseAndNormalizeThePowerShellResult(string PowerShellRawResult)
+        private string[] ParseAndNormalizeThePowerShellResult(string PowerShellRawResult)
         {
             string result = string.Empty;
 
@@ -126,12 +126,8 @@ namespace FluentSysInfo
                         // Ignore empty line sections !
                         if (string.IsNullOrWhiteSpace(lineSections[0]) || string.IsNullOrWhiteSpace(lineSections[1])) continue;
 
-                        // Ignore some CIM/Win32 classes properties
-                        if (lineSections[0] == "CreationClassName"
-                            || lineSections[0] == "SystemCreationClassName"
-                            || lineSections[0] == "CimClass"
-                            || lineSections[0] == "CimInstanceProperties"
-                            || lineSections[0] == "CimSystemProperties") continue;
+                        // Ignore some unwanted CIM/Win32 classes properties
+                        if (IsUnWantedCIMClass(lineSections[0])) continue;
 
 
                         if (result == string.Empty)
@@ -162,6 +158,16 @@ namespace FluentSysInfo
         }
 
 
+
+        private bool IsUnWantedCIMClass(string ClassName)
+        {
+            return ClassName == "CreationClassName"
+                             || ClassName == "SystemCreationClassName"
+                             || ClassName == "CimClass"
+                             || ClassName == "CimInstanceProperties"
+                             || ClassName == "CimSystemProperties"
+                             || ClassName == "CSCreationClassName";
+        }
 
     }
 
