@@ -14,10 +14,8 @@
 
 ---------------------------------------------------------------------------------------------*/
 
-using FluentConsoleNet;
 using System;
-using System.Diagnostics;
-using System.Threading.Tasks;
+using System.Linq;
 
 namespace FluentSysInfo
 {
@@ -25,11 +23,12 @@ namespace FluentSysInfo
     internal class JSONHelper
     {
 
-        internal string ConvertPowerShellResultToJSON(string Result, bool IgnoreEmptyResults = true)
+        internal string ConvertPowerShellResultToJSON(string PowerShellResult)
         {
             try
             {
-                return Result;
+
+                return string.Join(Environment.NewLine, ParseAndNormalizeThePowerShellResult(PowerShellResult));
             }
 
             catch (Exception ex)
@@ -38,6 +37,70 @@ namespace FluentSysInfo
             }
         }
 
+
+        internal string[] ParseAndNormalizeThePowerShellResult(string PowerShellRawResult)
+        {
+            string result = string.Empty;
+
+            try
+            {
+                // Split each line
+                string[] lines = PowerShellRawResult.Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+
+                // Process each line
+                foreach (string line in lines)
+                {
+                    try
+                    {
+                        // Ignore empty lines !
+                        if (string.IsNullOrWhiteSpace(line)) continue;
+
+                        // Ignore the line without ':' character ! ( may be it's an unwanted description , bad result or useless property !!)
+                        if (!line.Contains(':')) continue;
+
+                        string[] lineSections = line.Split(':');
+
+                        // Trim the line sections
+                        lineSections[0] = lineSections[0].Trim();
+                        lineSections[1] = lineSections[1].Trim();
+
+                        // Ignore empty line sections !
+                        if (string.IsNullOrWhiteSpace(lineSections[0]) || string.IsNullOrWhiteSpace(lineSections[1])) continue;
+
+                        // Ignore some CIM/Win32 classes
+                        if (lineSections[0] == "CreationClassName"
+                            || lineSections[0] == "SystemCreationClassName"
+                            || lineSections[0] == "CimClass"
+                            || lineSections[0] == "CimInstanceProperties"
+                            || lineSections[0] == "CimSystemProperties") continue;
+
+
+                        if (result == string.Empty)
+                        {
+                            result += $"{lineSections[0]}:{lineSections[1]}";
+                        }
+                        else
+                        {
+                            result += $"{Environment.NewLine}{lineSections[0]}:{lineSections[1]}";
+                        }
+
+
+                    }
+
+                    catch { /*Ignore the lopp internal possible exception ...*/ }
+
+                }
+
+                return result.Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+
+            }
+            catch (Exception ex)
+            {
+                // Pass the exception message to the caller function
+                return new string[] { "Error Occured : ", ex.Message };
+            }
+
+        }
 
 
 
