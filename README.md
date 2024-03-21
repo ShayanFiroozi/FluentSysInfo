@@ -39,8 +39,6 @@
  <br/>  
  
  
- > **Note**:  
-Not all freatures in the **Features** section have developed yet , but they are under developement and will be ready very soon 😉
  
 <br/>  
  
