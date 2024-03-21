@@ -2,7 +2,7 @@
  <img src="https://github.com/ShayanFiroozi/FluentSysInfo/blob/master/Icon.ico"
 </p>
 
-# FluentSysInfo
+# FluentSysInfo <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white"/>
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=ShayanFiroozi_FluentSysInfo&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=ShayanFiroozi_FluentSysInfo)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=ShayanFiroozi_FluentSysInfo&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=ShayanFiroozi_FluentSysInfo)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=ShayanFiroozi_FluentSysInfo&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=ShayanFiroozi_FluentSysInfo)
@@ -51,6 +51,9 @@ Since this is a new repository , there's no contributor yet! But **FluentSysInfo
 ## How To Use ❔
    
  - It's really simple to call the **FluentSysInfo** WebAPI :
+<p align="center">
+<img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white"
+</p>
  
  ```csharp
             string ServerSecteyKey = "FluentSysInfoSecretKeyXXX";
@@ -70,8 +73,11 @@ Since this is a new repository , there's no contributor yet! But **FluentSysInfo
 
 ```   
 
-And the result from the **FluentSysInfo** would be something like this : 
-
+And the result from the **FluentSysInfo** would be something like this :  
+<p align="center">
+<img src="https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white"
+</p>
+ 
 ```json
 {
   "DateTime": "3/19/2024 3:51:49 PM",
