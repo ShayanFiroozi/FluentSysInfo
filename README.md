@@ -29,7 +29,7 @@
     ✔ Main Board Info  
     ✔ BIOS Info  
     ✔ CPU Info  
-    ✔ PhysicalMemory Info  
+    ✔ Physical Memory Info  
     ✔ Disk , Partition And Drive Info  
     ✔ Network Interfaces Info  
     ✔ Graphic Card Info  
