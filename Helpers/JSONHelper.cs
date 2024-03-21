@@ -52,10 +52,15 @@ namespace FluentSysInfo
                 {
                     try
                     {
-                        // Ignore empty lines !
-                        if (string.IsNullOrWhiteSpace(line)) continue;
+                        // Handle the empty lines !
+                        if (line == string.Empty && result != string.Empty)
+                        {
+                            result += Environment.NewLine;
+                            continue;
+                        }
 
-                        // Ignore the line without ':' character ! ( may be it's an unwanted description , bad result or useless property !!)
+
+                        // Ignore the lines without ':' character ! ( may be it's an unwanted description , bad result or useless property !!)
                         if (!line.Contains(':')) continue;
 
                         string[] lineSections = line.Split(':');
@@ -67,7 +72,7 @@ namespace FluentSysInfo
                         // Ignore empty line sections !
                         if (string.IsNullOrWhiteSpace(lineSections[0]) || string.IsNullOrWhiteSpace(lineSections[1])) continue;
 
-                        // Ignore some CIM/Win32 classes
+                        // Ignore some CIM/Win32 classes properties
                         if (lineSections[0] == "CreationClassName"
                             || lineSections[0] == "SystemCreationClassName"
                             || lineSections[0] == "CimClass"
@@ -91,7 +96,7 @@ namespace FluentSysInfo
 
                 }
 
-                return result.Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+                return result.TrimEnd().Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
 
             }
             catch (Exception ex)
