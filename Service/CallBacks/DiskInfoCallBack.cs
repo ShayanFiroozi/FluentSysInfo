@@ -29,7 +29,7 @@ namespace FluentSysInfo
         private async Task DiskInfoCallBack(HttpContextBase ctx)
         {
 
-            await new HttpHelper().HttpAuthenticateThenSendData(ctx, new SysInfoDisk().GetDiskInfo());
+            await new HttpHelper().HttpAuthenticateThenSendData(ctx, new SysInfoDisk().GetInfo());
 
         }
 

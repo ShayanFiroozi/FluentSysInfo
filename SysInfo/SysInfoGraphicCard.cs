@@ -14,13 +14,15 @@
 
 ---------------------------------------------------------------------------------------------*/
 
+using FluentSysInfo.Interfaces;
+
 namespace FluentSysInfo
 {
-    internal class SysInfoGraphicCard
+    internal class SysInfoGraphicCard : ISysInfo
     {
 
 
-        internal string GetGraphicCardInfo()
+        public string GetInfo()
         {
             return new PowerShellHelper()
                          .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class CIM_VideoController -ErrorAction Stop | Select-Object *", true);

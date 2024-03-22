@@ -14,13 +14,15 @@
 
 ---------------------------------------------------------------------------------------------*/
 
+using FluentSysInfo.Interfaces;
+
 namespace FluentSysInfo
 {
-    internal class SysInfoOS
+    internal class SysInfoOS : ISysInfo
     {
 
 
-        internal string GetOSInfo()
+        public string GetInfo()
         {
             return new PowerShellHelper()
                         .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance  -Class CIM_OPeratingSystem -ErrorAction Stop | Select-Object *", true);

@@ -14,13 +14,15 @@
 
 ---------------------------------------------------------------------------------------------*/
 
+using FluentSysInfo.Interfaces;
+
 namespace FluentSysInfo
 {
-    internal class SysInfoDrive
+    internal class SysInfoDrive : ISysInfo
     {
 
 
-        internal string GetDriveInfo()
+        public string GetInfo()
         {
             return new PowerShellHelper()
                          .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class win32_logicaldisk -ErrorAction Stop | Select-Object *", true);

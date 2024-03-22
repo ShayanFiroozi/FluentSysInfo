@@ -14,13 +14,15 @@
 
 ---------------------------------------------------------------------------------------------*/
 
+using FluentSysInfo.Interfaces;
+
 namespace FluentSysInfo
 {
-    internal class SysInfoPhysicalMemory
+    internal class SysInfoPhysicalMemory : ISysInfo
     {
 
 
-        internal string GetPhysicalMemoryInfo()
+        public string GetInfo()
         {
             return new PowerShellHelper()
                          .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class Win32_PhysicalMemory -ErrorAction Stop | Select-Object *", true);

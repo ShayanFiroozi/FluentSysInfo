@@ -14,13 +14,15 @@
 
 ---------------------------------------------------------------------------------------------*/
 
+using FluentSysInfo.Interfaces;
+
 namespace FluentSysInfo
 {
-    internal class SysInfoWindowsServices
+    internal class SysInfoWindowsServices : ISysInfo
     {
 
 
-        internal string GetWindowsServicesInfo()
+        public string GetInfo()
         {
 
             return new PowerShellHelper()

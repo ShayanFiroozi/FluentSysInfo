@@ -38,7 +38,7 @@ namespace FluentSysInfo
 
         }
 
-        private static FastResponseTimer timer = new FastResponseTimer(5_000, () => new SysInfoRunningProcesses().GetRunningProcessesInfo());
+        private static FastResponseTimer timer = new FastResponseTimer(5_000, () => new SysInfoRunningProcesses().GetInfo());
 
         public static void StartFastResponse()
         {

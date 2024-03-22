@@ -14,13 +14,15 @@
 
 ---------------------------------------------------------------------------------------------*/
 
+using FluentSysInfo.Interfaces;
+
 namespace FluentSysInfo
 {
-    internal class SysInfoMotherBoard
+    internal class SysInfoMotherBoard : ISysInfo
     {
 
 
-        internal string GetMotherBoardInfo()
+        public string GetInfo()
         {
             return new PowerShellHelper()
                          .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class Win32_BaseBoard -ErrorAction Stop | Select-Object *", true);

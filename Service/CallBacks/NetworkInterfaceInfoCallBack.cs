@@ -29,7 +29,7 @@ namespace FluentSysInfo
         private async Task NetworkInterfaceInfoCallBack(HttpContextBase ctx)
         {
 
-            await new HttpHelper().HttpAuthenticateThenSendData(ctx, new SysInfoNetworkInterface().GetNetworkInterfacesInfo());
+            await new HttpHelper().HttpAuthenticateThenSendData(ctx, new SysInfoNetworkInterface().GetInfo());
 
         }
 

@@ -14,13 +14,15 @@
 
 ---------------------------------------------------------------------------------------------*/
 
+using FluentSysInfo.Interfaces;
+
 namespace FluentSysInfo
 {
-    internal class SysInfoPartition
+    internal class SysInfoPartition : ISysInfo
     {
 
 
-        internal string GetPartitionInfo()
+        public string GetInfo()
         {
             return new PowerShellHelper()
                          .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class CIM_DiskPartition -ErrorAction Stop | Select-Object *", true);

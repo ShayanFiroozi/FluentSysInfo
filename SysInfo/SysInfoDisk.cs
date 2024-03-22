@@ -14,13 +14,15 @@
 
 ---------------------------------------------------------------------------------------------*/
 
+using FluentSysInfo.Interfaces;
+
 namespace FluentSysInfo
 {
-    internal class SysInfoDisk
+    internal class SysInfoDisk : ISysInfo
     {
 
 
-        internal string GetDiskInfo()
+        public string GetInfo()
         {
             return new PowerShellHelper()
                          .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class CIM_DiskDrive -ErrorAction Stop | Select-Object *", true);

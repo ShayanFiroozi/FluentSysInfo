@@ -14,13 +14,15 @@
 
 ---------------------------------------------------------------------------------------------*/
 
+using FluentSysInfo.Interfaces;
+
 namespace FluentSysInfo
 {
-    internal class SysInfoNetworkInterface
+    internal class SysInfoNetworkInterface : ISysInfo
     {
 
 
-        internal string GetNetworkInterfacesInfo()
+        public string GetInfo()
         {
             return new PowerShellHelper()
                          .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class CIM_NetworkAdapter -ErrorAction Stop | Select-Object *", true);

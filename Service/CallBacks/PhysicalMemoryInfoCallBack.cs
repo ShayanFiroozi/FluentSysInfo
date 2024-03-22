@@ -29,7 +29,7 @@ namespace FluentSysInfo
         private async Task PhysicalMemoryInfoCallBack(HttpContextBase ctx)
         {
 
-            await new HttpHelper().HttpAuthenticateThenSendData(ctx, new SysInfoPhysicalMemory().GetPhysicalMemoryInfo());
+            await new HttpHelper().HttpAuthenticateThenSendData(ctx, new SysInfoPhysicalMemory().GetInfo());
 
         }
 

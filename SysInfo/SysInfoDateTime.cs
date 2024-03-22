@@ -15,32 +15,40 @@
 ---------------------------------------------------------------------------------------------*/
 
 
+using FluentSysInfo.Interfaces;
 using System;
 
 namespace FluentSysInfo
 {
-    internal class SysInfoDateTime
+    internal class SysInfoDateTime : ISysInfo
     {
 
+        public int NumberOfProperties => 7;
 
-        internal string GetDateTime() => DateTime.Now.ToString();
-
-        internal string GetDateTimeUTC() => DateTime.UtcNow.ToString();
-
-
-
-        internal string GetDate() => DateTime.Now.ToShortDateString();
-        internal string GetLongDate() => DateTime.Now.ToLongDateString();
+        public string GetInfo()
+        {
+            return $"{GetDateTime()},{GetDateTimeUTC()},{GetDate()},{GetTime()},{GetLongDate()},{GetDayOfWeek()},{GetFullDateTime()}";
+        }
 
 
+        private string GetDateTime() => DateTime.Now.ToString().Replace(',', ' ');
 
-        internal string GetTime() => DateTime.Now.ToLongTimeString();
-        internal string GetShortTime() => DateTime.Now.ToShortTimeString();
-
-        internal string GetDayOfWeek() => DateTime.Now.DayOfWeek.ToString();
+        private string GetDateTimeUTC() => DateTime.UtcNow.ToString().Replace(',', ' ');
 
 
-        internal string GetFullDateTime() => $"{GetLongDate()}  {GetTime()}";
+
+        private string GetDate() => DateTime.Now.ToShortDateString().Replace(',', ' ');
+        private string GetLongDate() => DateTime.Now.ToLongDateString().Replace(',', ' ');
+
+
+
+        private string GetTime() => DateTime.Now.ToLongTimeString().Replace(',', ' ');
+
+        private string GetDayOfWeek() => DateTime.Now.DayOfWeek.ToString().Replace(',', ' ');
+
+
+        private string GetFullDateTime() => $"{GetLongDate().Replace(',', ' ')}  {GetTime().Replace(',', ' ')}";
+
 
     }
 }

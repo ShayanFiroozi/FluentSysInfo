@@ -14,13 +14,15 @@
 
 ---------------------------------------------------------------------------------------------*/
 
+using FluentSysInfo.Interfaces;
+
 namespace FluentSysInfo
 {
-    internal class SysInfoRunningProcesses
+    internal class SysInfoRunningProcesses : ISysInfo
     {
 
 
-        internal string GetRunningProcessesInfo()
+        public string GetInfo()
         {
 
             return new PowerShellHelper()
