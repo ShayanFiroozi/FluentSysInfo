@@ -13,8 +13,7 @@ namespace FluentSysInfo
 
         internal event EventHandler<string> OnTimerExecution;
 
-        internal bool? IsRunning => Timer?.Enabled;
-
+    
         internal FastResponseTimer(int Interval, Func<string> CallbackFunction)
         {
             this.Interval = Interval;
