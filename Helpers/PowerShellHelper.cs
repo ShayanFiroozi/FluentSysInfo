@@ -20,7 +20,7 @@ using System.Diagnostics;
 namespace FluentSysInfo
 {
 
-    internal class PowerShellHelper
+    internal sealed class PowerShellHelper
     {
 
         internal string ExecutePowerShellCommandAndGetTheResult(string command, bool AsJSON)

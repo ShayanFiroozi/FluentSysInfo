@@ -14,28 +14,29 @@
 
 ---------------------------------------------------------------------------------------------*/
 
-using System;
 using System.Threading;
 
 namespace FluentSysInfo
 {
-    internal static class RunningProcessesFastResponse
+    internal sealed class SysInfoFastResponse
     {
 
-        private static string result;
-        public static string Result
+        private readonly ReaderWriterLockSlim SlimLock = new ReaderWriterLockSlim();
+
+        private string result;
+        public string Result
         {
             get
             {
                 try
                 {
 
-                    GainReadLock();
+                    SlimLock.EnterReadLock();
                     return result;
                 }
                 finally
                 {
-                    ReleaseReadLock();
+                    SlimLock.ExitReadLock();
                 }
             }
 
@@ -43,48 +44,39 @@ namespace FluentSysInfo
             {
                 try
                 {
-                    GainWriteLock();
+                    SlimLock.EnterWriteLock();
                     result = value;
                 }
                 finally
                 {
-                    ReleaseWriteLock();
+                    SlimLock.ExitWriteLock();
                 }
             }
 
         }
 
-        private static FastResponseTimer timer = new FastResponseTimer(5_000, () => new SysInfoRunningProcesses().GetInfo());
+        private FastResponseTimer timer = new FastResponseTimer(5_000, () => new SysInfoRunningProcesses().GetInfo());
 
-        public static void StartFastResponse()
+        public void StartFastResponse()
         {
             timer.OnTimerExecution += Timer_OnTimerExecution;
             timer.StartTimer();
         }
 
-        private static void Timer_OnTimerExecution(object sender, string e)
+        private void Timer_OnTimerExecution(object sender, string e)
         {
             // Getting the Result data from the SysInfo functions.
             Result = e;
         }
 
-        public static void StopFastResponse()
+        public void StopFastResponse()
         {
             timer.StopTimer();
             timer.OnTimerExecution -= Timer_OnTimerExecution;
         }
 
-        #region SlimLock Helpers
-        private static readonly ReaderWriterLockSlim SlimLock = new ReaderWriterLockSlim();
 
 
-        private static void GainReadLock() => SlimLock.EnterReadLock();
-        private static void GainWriteLock() => SlimLock.EnterWriteLock();
-
-
-        private static void ReleaseReadLock() => SlimLock.ExitReadLock();
-        private static void ReleaseWriteLock() => SlimLock.ExitWriteLock();
-        #endregion
 
 
 

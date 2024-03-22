@@ -14,11 +14,9 @@
 
 ---------------------------------------------------------------------------------------------*/
 
-using FluentSysInfo.Interfaces;
-
 namespace FluentSysInfo
 {
-    internal class SysInfoCpu : ISysInfo
+    internal sealed class SysInfoCpu : ISysInfo
     {
 
 

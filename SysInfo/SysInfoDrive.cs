@@ -14,11 +14,11 @@
 
 ---------------------------------------------------------------------------------------------*/
 
-using FluentSysInfo.Interfaces;
+
 
 namespace FluentSysInfo
 {
-    internal class SysInfoDrive : ISysInfo
+    internal sealed class SysInfoDrive : ISysInfo
     {
 
 

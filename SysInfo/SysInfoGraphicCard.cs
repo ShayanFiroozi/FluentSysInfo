@@ -14,11 +14,11 @@
 
 ---------------------------------------------------------------------------------------------*/
 
-using FluentSysInfo.Interfaces;
+
 
 namespace FluentSysInfo
 {
-    internal class SysInfoGraphicCard : ISysInfo
+    internal sealed class SysInfoGraphicCard : ISysInfo
     {
 
 

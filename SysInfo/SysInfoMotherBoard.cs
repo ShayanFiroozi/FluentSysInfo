@@ -14,11 +14,10 @@
 
 ---------------------------------------------------------------------------------------------*/
 
-using FluentSysInfo.Interfaces;
 
 namespace FluentSysInfo
 {
-    internal class SysInfoMotherBoard : ISysInfo
+    internal sealed class SysInfoMotherBoard : ISysInfo
     {
 
 

@@ -20,7 +20,7 @@ using WatsonWebserver.Core;
 namespace FluentSysInfo
 {
 
-    internal class HttpHelper
+    internal sealed class HttpHelper
     {
 
         internal async Task HttpAuthenticateThenSendData(HttpContextBase ctx, string DataToSend)

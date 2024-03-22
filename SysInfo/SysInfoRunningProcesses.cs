@@ -14,11 +14,9 @@
 
 ---------------------------------------------------------------------------------------------*/
 
-using FluentSysInfo.Interfaces;
-
 namespace FluentSysInfo
 {
-    internal class SysInfoRunningProcesses : ISysInfo
+    internal sealed class SysInfoRunningProcesses : ISysInfo
     {
 
 

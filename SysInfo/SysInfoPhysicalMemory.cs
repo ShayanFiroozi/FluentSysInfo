@@ -14,11 +14,10 @@
 
 ---------------------------------------------------------------------------------------------*/
 
-using FluentSysInfo.Interfaces;
 
 namespace FluentSysInfo
 {
-    internal class SysInfoPhysicalMemory : ISysInfo
+    internal sealed class SysInfoPhysicalMemory : ISysInfo
     {
 
 

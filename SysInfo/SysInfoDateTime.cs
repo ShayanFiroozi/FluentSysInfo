@@ -15,21 +15,22 @@
 ---------------------------------------------------------------------------------------------*/
 
 
-using FluentSysInfo.Interfaces;
+
 using System;
 
 namespace FluentSysInfo
 {
-    internal class SysInfoDateTime : ISysInfo
+    internal sealed class SysInfoDateTime : ISysInfo
     {
 
-        public int NumberOfProperties => 7;
+        internal int NumberOfProperties => 7;
 
         public string GetInfo()
         {
             return $"{GetDateTime()},{GetDateTimeUTC()},{GetDate()},{GetTime()},{GetLongDate()},{GetDayOfWeek()},{GetFullDateTime()}";
         }
 
+        // Note 👉 We replaced the ',' character with a normal space because ',' character will interfere with spliting operation further ⬇
 
         private string GetDateTime() => DateTime.Now.ToString().Replace(',', ' ');
 

@@ -14,11 +14,11 @@
 
 ---------------------------------------------------------------------------------------------*/
 
-using FluentSysInfo.Interfaces;
+using FluentSysInfo;
 
 namespace FluentSysInfo
 {
-    internal class SysInfoBios : ISysInfo
+    internal sealed class SysInfoBios : ISysInfo
     {
 
         public string GetInfo()

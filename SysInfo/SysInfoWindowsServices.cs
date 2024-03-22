@@ -14,11 +14,10 @@
 
 ---------------------------------------------------------------------------------------------*/
 
-using FluentSysInfo.Interfaces;
 
 namespace FluentSysInfo
 {
-    internal class SysInfoWindowsServices : ISysInfo
+    internal sealed class SysInfoWindowsServices : ISysInfo
     {
 
 

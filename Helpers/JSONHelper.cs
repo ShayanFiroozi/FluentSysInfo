@@ -22,7 +22,7 @@ using System.Text;
 namespace FluentSysInfo
 {
 
-    internal class JsonHelper
+    internal sealed class JsonHelper
     {
 
         internal string ConvertPowerShellResultToJSON(string PowerShellResult)
