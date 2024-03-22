@@ -14,7 +14,7 @@
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=ShayanFiroozi_FluentSysInfo&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=ShayanFiroozi_FluentSysInfo)
 [![GitHub License](https://img.shields.io/github/license/ShayanFiroozi/FluentSysInfo)](https://github.com/ShayanFiroozi/FluentSysInfo/blob/master/LICENSE.md)
  
-**FluentSysInfo** provides the accessibility to the various System Informations of a local or remote machine via WebAPI
+**FluentSysInfo** provides the accessibility to the various System Informations of the local or a remote machine via WebAPI
   
 ✔ FluentSysInfo uses [Watson Web Server](https://github.com/dotnet/WatsonWebserver) , A great , lightweight and most reliable web server , special thanks to @jchristn 👍
 
