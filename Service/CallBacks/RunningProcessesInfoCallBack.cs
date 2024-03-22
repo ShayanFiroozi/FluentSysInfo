@@ -29,7 +29,6 @@ namespace FluentSysInfo
         private async Task RunningProcessesInfoCallBack(HttpContextBase ctx)
         {
 
-            //  await new HttpHelper().HttpAuthenticateThenSendData(ctx, new SysInfoRunningProcesses().GetRunningProcessesInfo());
             await new HttpHelper().HttpAuthenticateThenSendData(ctx, RunningProcessesFastResponse.Result);
 
         }

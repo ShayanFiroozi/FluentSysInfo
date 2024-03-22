@@ -7,7 +7,7 @@ namespace FluentSysInfo
     {
         private Timer Timer;
 
-        private readonly int Interval = 5_000; // Millisecond(s)
+        private readonly int Interval;
 
         private readonly Func<string> CallbackFunction;
 
@@ -38,7 +38,7 @@ namespace FluentSysInfo
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            OnTimerExecution?.Invoke(null, CallbackFunction());
+            OnTimerExecution?.Invoke(sender, CallbackFunction());
         }
 
         internal void StopTimer()
