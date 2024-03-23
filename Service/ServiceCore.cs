@@ -37,8 +37,10 @@ namespace FluentSysInfo
             // Load Service Settings
             Settings.LoadServiceSettings();
 
-            WindowsServicesFastResponse.StartFastResponse();
-            RunningProcessesFastResponse.StartFastResponse();
+            //WindowsServicesFastResponse.StartFastResponse();
+            //RunningProcessesFastResponse.StartFastResponse();
+
+            FastResponseHelper.StartAllFastResponseAgents();
 
         }
 

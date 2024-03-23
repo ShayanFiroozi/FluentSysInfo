@@ -14,11 +14,12 @@
 
 ---------------------------------------------------------------------------------------------*/
 
+using System;
 using System.Threading;
 
 namespace FluentSysInfo
 {
-    internal sealed class SysInfoFastResponse
+    internal sealed partial class FastResponseInfo<T> where T : ISysInfo, new()
     {
 
         private readonly ReaderWriterLockSlim SlimLock = new ReaderWriterLockSlim();
@@ -55,7 +56,13 @@ namespace FluentSysInfo
 
         }
 
-        private FastResponseTimer timer = new FastResponseTimer(5_000, () => new SysInfoRunningProcesses().GetInfo());
+
+        private FastResponseTimer timer;
+
+        public FastResponseInfo(TimeSpan interval)
+        {
+            timer = new FastResponseTimer(interval);
+        }
 
         public void StartFastResponse()
         {

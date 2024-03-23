@@ -15,51 +15,60 @@
 ---------------------------------------------------------------------------------------------*/
 
 using System;
+using System.Reflection;
 using System.Timers;
 
 namespace FluentSysInfo
 {
-    internal sealed class FastResponseTimer
+    internal sealed partial class FastResponseInfo<T> where T : ISysInfo, new()
     {
-        private Timer Timer;
 
-        private readonly int Interval;
-
-        private readonly Func<string> CallbackFunction;
-
-        internal event EventHandler<string> OnTimerExecution;
-
-    
-        internal FastResponseTimer(int Interval, Func<string> CallbackFunction)
+        internal sealed class FastResponseTimer
         {
-            this.Interval = Interval;
-            this.CallbackFunction = CallbackFunction;
-        }
+            private Timer Timer;
 
-        internal void StartTimer()
-        {
-            Timer = new Timer(Interval);
+            private readonly double Interval;
 
 
-            Timer.Elapsed += Timer_Elapsed;
-            Timer.Enabled = true;
-            Timer.AutoReset = true;
-            Timer.Start();
 
-            // Call the CallBackFunction for the first time
-            Timer_Elapsed(null, null);
-        }
+            internal event EventHandler<string> OnTimerExecution;
 
 
-        private void Timer_Elapsed(object sender, ElapsedEventArgs e)
-        {
-            OnTimerExecution?.Invoke(sender, CallbackFunction());
-        }
+            internal FastResponseTimer(TimeSpan Interval)
+            {
+                this.Interval = Interval.TotalMilliseconds;
 
-        internal void StopTimer()
-        {
-            Timer.Enabled = false;
-            Timer.Stop();
+            }
+
+
+            internal void StartTimer()
+            {
+                Timer = new Timer(Interval);
+
+
+                Timer.Elapsed += Timer_Elapsed;
+                Timer.Enabled = true;
+                Timer.AutoReset = true;
+                Timer.Start();
+
+                // Call the T.GetInfo() for the first time
+                Timer_Elapsed(null, null);
+            }
+
+
+            private void Timer_Elapsed(object sender, ElapsedEventArgs e)
+            {
+                OnTimerExecution?.Invoke(sender, new T().GetInfo());
+            }
+
+
+            internal void StopTimer()
+            {
+                Timer.Enabled = false;
+                Timer.Stop();
+            }
+
+
         }
 
 

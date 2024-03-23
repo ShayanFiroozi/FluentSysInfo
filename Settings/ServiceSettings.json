@@ -1,6 +1,77 @@
 {
   "IPAddress": "*",
   "ServicePort": "54800",
-  "UseAuthentication": "true",
-  "ServiceSecretKey": "FluentSysInfoSecretKeyXXX"
+  "UseAuthentication": "yes",
+  "ServiceSecretKey": "FluentSysInfoSecretKeyXXX",
+  "FastResponse": "yes",
+
+  "FastResponseAgents": {
+
+    "SysInfoBios": {
+      "IsActive": "no",
+      "RefreshInterval": "5Seconds"
+    },
+
+    "SysInfoCpu": {
+      "IsActive": "yes",
+      "RefreshInterval": "5Seconds"
+    },
+
+    "SysInfoDateTime": {
+      "IsActive": "Fast Response Not Supported !",
+      "RefreshInterval": "0Seconds"
+    },
+
+    "SysInfoDisk": {
+      "IsActive": "no",
+      "RefreshInterval": "5Seconds"
+    },
+
+    "SysInfoDrive": {
+      "IsActive": "yes",
+      "RefreshInterval": "5Seconds"
+    },
+
+    "SysInfoGraphicCard": {
+      "IsActive": "no",
+      "RefreshInterval": "5Seconds"
+    },
+
+    "SysInfoMotherBoard": {
+      "IsActive": "no",
+      "RefreshInterval": "5Seconds"
+    },
+
+    "SysInfoNetworkInterface": {
+      "IsActive": "no",
+      "RefreshInterval": "5Seconds"
+    },
+
+    "SysInfoOS": {
+      "IsActive": "no",
+      "RefreshInterval": "5Seconds"
+    },
+
+    "SysInfoPartition": {
+      "IsActive": "no",
+      "RefreshInterval": "5Seconds"
+    },
+
+    "SysInfoPhysicalMemory": {
+      "IsActive": "no",
+      "RefreshInterval": "5Seconds"
+    },
+
+    "SysInfoRunningProcesses": {
+      "IsActive": "yes",
+      "RefreshInterval": "5Seconds"
+    },
+
+    "SysInfoWindowsServices": {
+      "IsActive": "yes",
+      "RefreshInterval": "5Seconds"
+    }
+
+  }
+
 }
