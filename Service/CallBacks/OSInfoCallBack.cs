@@ -28,8 +28,9 @@ namespace FluentSysInfo
 
         private async Task OSInfoCallBack(HttpContextBase ctx)
         {
+            await GetSysInfoResult(ctx, new SysInfoOS());
 
-            await new HttpHelper().HttpAuthenticateThenSendData(ctx, new SysInfoOS().GetInfo());
+            
 
         }
 

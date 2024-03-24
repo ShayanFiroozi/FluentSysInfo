@@ -28,8 +28,9 @@ namespace FluentSysInfo
 
         private async Task GraphicCardInfoCallBack(HttpContextBase ctx)
         {
+            await GetSysInfoResult(ctx, new SysInfoGraphicCard());
 
-            await new HttpHelper().HttpAuthenticateThenSendData(ctx, new SysInfoGraphicCard().GetInfo());
+            
 
         }
 

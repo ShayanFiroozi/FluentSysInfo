@@ -48,7 +48,7 @@
     },
 
     "SysInfoOS": {
-      "IsActive": "no",
+      "IsActive": "yes",
       "RefreshInterval": "5Seconds"
     },
 

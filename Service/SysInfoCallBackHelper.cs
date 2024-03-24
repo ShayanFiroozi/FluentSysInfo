@@ -26,13 +26,22 @@ namespace FluentSysInfo
     {
 
 
-        private async Task PhysicalMemoryInfoCallBack(HttpContextBase ctx)
+        private async Task GetSysInfoResult(HttpContextBase ctx, ISysInfo sysInfoClass)
         {
+            if (Settings.IsFastResponseEnabled(sysInfoClass.GetType().Name))
+            {
+                // Get the result from the Fast Response Agents ( Faster )
+                await new HttpHelper().HttpAuthenticateThenSendData(ctx, FastResponseHelper.GetAgentResult(sysInfoClass.GetType().Name));
+            }
+            else
+            {
+                // Get the result from executing the PowerShell commands directly (slower)
+                await new HttpHelper().HttpAuthenticateThenSendData(ctx, sysInfoClass.GetInfo());
+            }
 
-            await GetSysInfoResult(ctx, new SysInfoPhysicalMemory());
-
-            
         }
+
+
 
     }
 

@@ -29,8 +29,9 @@ namespace FluentSysInfo
 
         private async Task DriveInfoCallBack(HttpContextBase ctx)
         {
+            await GetSysInfoResult(ctx, new SysInfoDrive());
 
-            await new HttpHelper().HttpAuthenticateThenSendData(ctx, new SysInfoDrive().GetInfo());
+            
 
         }
 

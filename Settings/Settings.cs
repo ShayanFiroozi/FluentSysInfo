@@ -18,6 +18,7 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace FluentSysInfo
 {
@@ -47,10 +48,15 @@ namespace FluentSysInfo
             UseAuthentication = ServiceSettings.GetValue("UseAuthentication", "yes") == "yes";
             FastResponse = ServiceSettings.GetValue("FastResponse", "yes") == "yes";
 
-            EnabledFastResponseAgents = GetEnabledFastResponseAgents();
+            EnabledFastResponseAgents = GetFastResponseAgentSetting();
         }
 
-        private static List<(string AgentName, int FastResponseInterval)> GetEnabledFastResponseAgents()
+        internal static bool IsFastResponseEnabled(string AgentName)
+        {
+            return EnabledFastResponseAgents.Any(a => a.AgentName == AgentName) && FastResponse;
+        }
+
+        private static List<(string AgentName, int FastResponseInterval)> GetFastResponseAgentSetting()
         {
             List<(string AgentName, int FastResponseInterval)> agents = new List<(string AgentName, int FastResponseInterval)>();
 
@@ -71,6 +77,7 @@ namespace FluentSysInfo
             return agents;
 
         }
+
 
 
     }

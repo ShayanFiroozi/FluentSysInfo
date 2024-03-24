@@ -14,10 +14,13 @@
 //---------------------------------------------------------------------------------------------*/
 
 
+using FastLog.Interfaces;
 using FluentConsoleNet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Threading.Tasks;
 
 ///*---------------------------------------------------------------------------------------------
 namespace FluentSysInfo
@@ -37,35 +40,43 @@ namespace FluentSysInfo
         internal static void StartAllFastResponseAgents()
         {
 
-            foreach ((string AgentName, int FastResponseInterval) agent in Settings.EnabledFastResponseAgents)
+            _ = (FastLogger.logger?.LogInfo("Initializing Fast Response Agents..."));
+
+            foreach ((string AgentName, int FastResponseInterval) Agent in Settings.EnabledFastResponseAgents)
             {
-                if (agent.FastResponseInterval > 0)
+                if (Agent.FastResponseInterval > 0)
                 {
-                    // Activate the FastRespone agent with Agent Name got from the Setting file
-
-                    // Using Reflection with generic methods and types..👇
-
-
-                    Type sysInfoType = Type.GetType($"FluentSysInfo.{agent.AgentName}");
-
-                    Type fastResponseType = typeof(FastResponseInfo<>).MakeGenericType(new Type[] { sysInfoType });
-
-                    dynamic AgentInstance = Activator.CreateInstance(fastResponseType, TimeSpan.FromSeconds(agent.FastResponseInterval));
-
-
-                    AgentInstance.StartFastResponse();
-
-                    ActiveAgents.Add((agent.AgentName, AgentInstance));
-
-                    _ = (FastLogger.logger?.LogSystem(
-                              $"FastResponse agent {agent.AgentName} has been started with interval of {agent.FastResponseInterval:N0} second(s)."));
-
-
+                    StartFastResponseAgent(Agent.AgentName, Agent.FastResponseInterval);
                 }
             }
 
+            _ = (FastLogger.logger?.LogInfo("Fast Response initialization finished..."));
+
         }
 
+
+        private static void StartFastResponseAgent(string AgentName, int FastResponseInterval)
+        {
+            // Activate the FastRespone agent with Agent Name got from the Setting file
+
+            // Using Reflection with generic methods and types..👇
+
+
+            Type sysInfoType = Type.GetType($"{Assembly.GetExecutingAssembly().GetName().Name}.{AgentName}");
+
+            Type fastResponseType = typeof(FastResponseInfo<>).MakeGenericType(new Type[] { sysInfoType });
+
+            dynamic AgentInstance = Activator.CreateInstance(fastResponseType, TimeSpan.FromSeconds(FastResponseInterval));
+
+
+            AgentInstance.StartFastResponse();
+
+            ActiveAgents.Add((AgentName, AgentInstance));
+
+            _ = (FastLogger.logger?.LogSystem($"FastResponse agent {AgentName} has been started with interval of {FastResponseInterval:N0} second(s)."));
+
+
+        }
 
 
 

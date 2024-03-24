@@ -29,7 +29,9 @@ namespace FluentSysInfo
         private async Task PartitionInfoCallBack(HttpContextBase ctx)
         {
 
-            await new HttpHelper().HttpAuthenticateThenSendData(ctx, new SysInfoPartition().GetInfo());
+            await GetSysInfoResult(ctx, new SysInfoPartition());
+
+            
 
         }
 

@@ -28,8 +28,9 @@ namespace FluentSysInfo
 
         private async Task CPUInfoCallBack(HttpContextBase ctx)
         {
+            await GetSysInfoResult(ctx, new SysInfoCpu());
 
-            await new HttpHelper().HttpAuthenticateThenSendData(ctx, FastResponseHelper.GetAgentResult("SysInfoCpu"));
+            
 
         }
 

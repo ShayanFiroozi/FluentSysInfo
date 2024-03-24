@@ -29,7 +29,8 @@ namespace FluentSysInfo
         private async Task WindowsServicesInfoCallBack(HttpContextBase ctx)
         {
 
-            await new HttpHelper().HttpAuthenticateThenSendData(ctx, FastResponseHelper.GetAgentResult("SysInfoWindowsServices"));
+            await GetSysInfoResult(ctx, new SysInfoWindowsServices());
+
 
         }
 

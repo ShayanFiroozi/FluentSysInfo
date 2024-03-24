@@ -29,7 +29,9 @@ namespace FluentSysInfo
         private async Task CPUMotherBoardCallBack(HttpContextBase ctx)
         {
 
-            await new HttpHelper().HttpAuthenticateThenSendData(ctx, new SysInfoMotherBoard().GetInfo());
+            await GetSysInfoResult(ctx, new SysInfoMotherBoard());
+
+            
 
         }
 
