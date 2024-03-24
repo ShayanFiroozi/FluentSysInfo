@@ -53,14 +53,12 @@ namespace FluentSysInfo
 
         internal static bool IsFastResponseEnabled(string AgentName)
         {
-            return EnabledFastResponseAgents.Any(a => a.AgentName == AgentName) && FastResponse;
+            return EnabledFastResponseAgents.Exists(a => a.AgentName == AgentName) && FastResponse;
         }
 
         private static List<(string AgentName, int FastResponseInterval)> GetFastResponseAgentSetting()
         {
             List<(string AgentName, int FastResponseInterval)> agents = new List<(string AgentName, int FastResponseInterval)>();
-
-            agents.Clear();
 
             foreach (IConfigurationSection FastResonseAgent in ServiceSettings.GetSection("FastResponseAgents").GetChildren())
             {

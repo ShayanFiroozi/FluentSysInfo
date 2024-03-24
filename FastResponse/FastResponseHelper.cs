@@ -27,12 +27,12 @@ namespace FluentSysInfo
 {
     internal static class FastResponseHelper
     {
-
-        internal static List<(string AgentName, dynamic FastResponseAgent)> ActiveAgents = new List<(string AgentName, dynamic FastResponseAgent)>();
+        private static readonly List<(string AgentName, dynamic FastResponseAgent)> activeAgents = new List<(string AgentName, dynamic FastResponseAgent)>();
+        internal static List<(string AgentName, dynamic FastResponseAgent)> ActiveAgents = activeAgents;
 
         internal static string GetAgentResult(string AgenName)
         {
-            if (!ActiveAgents.Any(a => a.AgentName == AgenName)) return string.Empty;
+            if (!ActiveAgents.Exists(a => a.AgentName == AgenName)) return string.Empty;
 
             return ActiveAgents.Single(a => a.AgentName == AgenName).FastResponseAgent.Result;
         }
@@ -64,7 +64,7 @@ namespace FluentSysInfo
 
             Type sysInfoType = Type.GetType($"{Assembly.GetExecutingAssembly().GetName().Name}.{AgentName}");
 
-            Type fastResponseType = typeof(FastResponseInfo<>).MakeGenericType(new Type[] { sysInfoType });
+            Type fastResponseType = typeof(FastResponseInfo<>).MakeGenericType(sysInfoType);
 
             dynamic AgentInstance = Activator.CreateInstance(fastResponseType, TimeSpan.FromSeconds(FastResponseInterval));
 
