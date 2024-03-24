@@ -27,8 +27,8 @@ namespace FluentSysInfo
 {
     internal static class FastResponseHelper
     {
-        private static readonly List<(string AgentName, dynamic FastResponseAgent)> activeAgents = new List<(string AgentName, dynamic FastResponseAgent)>();
-        internal static List<(string AgentName, dynamic FastResponseAgent)> ActiveAgents = activeAgents;
+        private static readonly List<(string AgentName, dynamic FastResponseAgent)> ActiveAgents = new List<(string AgentName, dynamic FastResponseAgent)>();
+        
 
         internal static string GetAgentResult(string AgenName)
         {
