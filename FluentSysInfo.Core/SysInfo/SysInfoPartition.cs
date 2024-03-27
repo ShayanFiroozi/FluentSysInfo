@@ -14,17 +14,17 @@
 
 ---------------------------------------------------------------------------------------------*/
 
-using FluentSysInfo;
 
-namespace FluentSysInfo
+namespace FluentSysInfo.Core
 {
-    internal sealed class SysInfoBios : ISysInfo
+    internal sealed class SysInfoPartition : ISysInfo
     {
+
 
         public string GetInfo()
         {
             return new PowerShellHelper()
-                         .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class CIM_BIOSElement -ErrorAction Stop | Select-Object *", true);
+                         .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class CIM_DiskPartition -ErrorAction Stop | Select-Object *", true);
         }
 
 

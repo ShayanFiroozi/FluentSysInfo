@@ -45,6 +45,10 @@
 		    <PackagePath>\</PackagePath>
 		  </None>
 		</ItemGroup>
+
+		<ItemGroup>
+		  <PackageReference Include="FastLog.Net" Version="1.1.8568" />
+		</ItemGroup>
 	
 
 </Project>

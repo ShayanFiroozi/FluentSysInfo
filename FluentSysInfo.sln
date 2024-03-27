@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentSysInfo", "FluentSysI
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentSysInfoTest", "FluentSysInfoTest\FluentSysInfoTest.csproj", "{C0581AD7-5DD3-4DDB-822F-DF1A66BB024E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentSysInfo.Core", "FluentSysInfo.Core\FluentSysInfo.Core.csproj", "{36A5C607-335C-42E6-94C5-8CA57C5C55A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentSysInfo.Core", "FluentSysInfo.Core\FluentSysInfo.Core.csproj", "{36A5C607-335C-42E6-94C5-8CA57C5C55A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

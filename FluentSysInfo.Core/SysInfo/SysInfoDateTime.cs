@@ -18,7 +18,7 @@
 
 using System;
 
-namespace FluentSysInfo
+namespace FluentSysInfo.Core
 {
     internal sealed class SysInfoDateTime : ISysInfo
     {

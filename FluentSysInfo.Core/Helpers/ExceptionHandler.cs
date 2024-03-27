@@ -18,7 +18,7 @@ using FluentConsoleNet;
 using System;
 using System.Threading.Tasks;
 
-namespace FluentSysInfo
+namespace FluentSysInfo.Core
 {
 
     internal static class ExceptionHandler

@@ -18,7 +18,7 @@ using FastLog.Core;
 using FastLog.Internal;
 using System.IO;
 
-namespace FluentSysInfo
+namespace FluentSysInfo.Core
 {
     internal static class FastLogger
     {

@@ -23,7 +23,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 
 ///*---------------------------------------------------------------------------------------------
-namespace FluentSysInfo
+namespace FluentSysInfo.Core
 {
     internal static class FastResponseHelper
     {

@@ -14,20 +14,10 @@
 
 ---------------------------------------------------------------------------------------------*/
 
-
-
-namespace FluentSysInfo
+namespace FluentSysInfo.Core
 {
-    internal sealed class SysInfoGraphicCard : ISysInfo
+    internal interface ISysInfo
     {
-
-
-        public string GetInfo()
-        {
-            return new PowerShellHelper()
-                         .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class CIM_VideoController -ErrorAction Stop | Select-Object *", true);
-        }
-
-
+        string GetInfo();
     }
 }

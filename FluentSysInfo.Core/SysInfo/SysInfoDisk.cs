@@ -16,7 +16,7 @@
 
 
 
-namespace FluentSysInfo
+namespace FluentSysInfo.Core
 {
     internal sealed class SysInfoDisk : ISysInfo
     {

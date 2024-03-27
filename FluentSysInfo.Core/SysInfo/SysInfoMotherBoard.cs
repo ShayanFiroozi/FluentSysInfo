@@ -15,17 +15,16 @@
 ---------------------------------------------------------------------------------------------*/
 
 
-
-namespace FluentSysInfo
+namespace FluentSysInfo.Core
 {
-    internal sealed class SysInfoNetworkInterface : ISysInfo
+    internal sealed class SysInfoMotherBoard : ISysInfo
     {
 
 
         public string GetInfo()
         {
             return new PowerShellHelper()
-                         .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class CIM_NetworkAdapter -ErrorAction Stop | Select-Object *", true);
+                         .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class Win32_BaseBoard -ErrorAction Stop | Select-Object *", true);
         }
 
 

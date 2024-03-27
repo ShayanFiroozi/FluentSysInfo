@@ -19,7 +19,7 @@ using System;
 using System.Linq;
 using System.Text;
 
-namespace FluentSysInfo
+namespace FluentSysInfo.Core
 {
 
     internal sealed class JsonHelper

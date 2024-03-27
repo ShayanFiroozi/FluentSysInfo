@@ -16,16 +16,16 @@
 
 
 
-namespace FluentSysInfo
+namespace FluentSysInfo.Core
 {
-    internal sealed class SysInfoDrive : ISysInfo
+    internal sealed class SysInfoNetworkInterface : ISysInfo
     {
 
 
         public string GetInfo()
         {
             return new PowerShellHelper()
-                         .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class win32_logicaldisk -ErrorAction Stop | Select-Object *", true);
+                         .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class CIM_NetworkAdapter -ErrorAction Stop | Select-Object *", true);
         }
 
 

@@ -14,17 +14,16 @@
 
 ---------------------------------------------------------------------------------------------*/
 
-
-namespace FluentSysInfo
+namespace FluentSysInfo.Core
 {
-    internal sealed class SysInfoPartition : ISysInfo
+    internal sealed class SysInfoCpu : ISysInfo
     {
 
 
         public string GetInfo()
         {
             return new PowerShellHelper()
-                         .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class CIM_DiskPartition -ErrorAction Stop | Select-Object *", true);
+                         .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class CIM_Processor -ErrorAction Stop | Select-Object *", true);
         }
 
 

@@ -14,10 +14,9 @@
 
 ---------------------------------------------------------------------------------------------*/
 
-
-namespace FluentSysInfo
+namespace FluentSysInfo.Core
 {
-    internal sealed class SysInfoWindowsServices : ISysInfo
+    internal sealed class SysInfoRunningProcesses : ISysInfo
     {
 
 
@@ -25,7 +24,7 @@ namespace FluentSysInfo
         {
 
             return new PowerShellHelper()
-            .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class Win32_Service -ErrorAction Stop | Select-Object *", true);
+            .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class CIM_Process -ErrorAction Stop | Select-Object *", true);
 
         }
 

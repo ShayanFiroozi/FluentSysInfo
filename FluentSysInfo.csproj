@@ -37,9 +37,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="FluentSysInfo.Core\**" />
 	  <Compile Remove="FluentSysInfoTest\**" />
+	  <Content Remove="FluentSysInfo.Core\**" />
 	  <Content Remove="FluentSysInfoTest\**" />
+	  <EmbeddedResource Remove="FluentSysInfo.Core\**" />
 	  <EmbeddedResource Remove="FluentSysInfoTest\**" />
+	  <None Remove="FluentSysInfo.Core\**" />
 	  <None Remove="FluentSysInfoTest\**" />
 	</ItemGroup>
 

@@ -15,16 +15,18 @@
 ---------------------------------------------------------------------------------------------*/
 
 
-namespace FluentSysInfo
+namespace FluentSysInfo.Core
 {
-    internal sealed class SysInfoPhysicalMemory : ISysInfo
+    internal sealed class SysInfoWindowsServices : ISysInfo
     {
 
 
         public string GetInfo()
         {
+
             return new PowerShellHelper()
-                         .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class Win32_PhysicalMemory -ErrorAction Stop | Select-Object *", true);
+            .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class Win32_Service -ErrorAction Stop | Select-Object *", true);
+
         }
 
 

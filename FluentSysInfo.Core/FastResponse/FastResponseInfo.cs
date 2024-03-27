@@ -17,7 +17,7 @@
 using System;
 using System.Threading;
 
-namespace FluentSysInfo
+namespace FluentSysInfo.Core
 {
     internal sealed partial class FastResponseInfo<T> where T : ISysInfo, new()
     {

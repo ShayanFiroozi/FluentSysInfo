@@ -17,7 +17,7 @@
 using System;
 using System.Diagnostics;
 
-namespace FluentSysInfo
+namespace FluentSysInfo.Core
 {
 
     internal sealed class PowerShellHelper

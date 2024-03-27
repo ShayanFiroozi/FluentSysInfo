@@ -14,10 +14,19 @@
 
 ---------------------------------------------------------------------------------------------*/
 
-namespace FluentSysInfo
+using FluentSysInfo;
+
+namespace FluentSysInfo.Core
 {
-    internal interface ISysInfo
+    internal sealed class SysInfoBios : ISysInfo
     {
-        string GetInfo();
+
+        public string GetInfo()
+        {
+            return new PowerShellHelper()
+                         .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class CIM_BIOSElement -ErrorAction Stop | Select-Object *", true);
+        }
+
+
     }
 }

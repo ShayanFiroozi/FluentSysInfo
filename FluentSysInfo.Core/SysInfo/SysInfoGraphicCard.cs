@@ -16,23 +16,17 @@
 
 
 
-namespace FluentSysInfo
+namespace FluentSysInfo.Core
 {
-    internal sealed class SysInfoOS : ISysInfo
+    internal sealed class SysInfoGraphicCard : ISysInfo
     {
 
 
         public string GetInfo()
         {
             return new PowerShellHelper()
-                        .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance  -Class CIM_OPeratingSystem -ErrorAction Stop | Select-Object *", true);
-
+                         .ExecutePowerShellCommandAndGetTheResult("Get-CimInstance -Class CIM_VideoController -ErrorAction Stop | Select-Object *", true);
         }
-
-
-
-
-
 
 
     }
